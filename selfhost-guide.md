@@ -1,0 +1,164 @@
+# Mark Sharp Selfhosting Guide
+
+_The extension is referred to as 'M#' in this guide for short_
+
+## Setup
+
+VSIX Download Link: https://mark-sharp.s3.us-west-2.amazonaws.com/mark-sharp-0.0.1.vsix
+
+[Installation Instructions for .VSIX](https://code.visualstudio.com/docs/editor/extension-marketplace#_install-from-a-vsix)
+
+### Additional VS Code setup
+
+==**IMPORTANT!**== Turn off any formatters for Markdown, as this will interfere with the extension:
+
+In `settings.json`, add:
+
+```json
+"[markdown]": {
+    "editor.defaultFormatter": null,
+    "editor.formatOnSave": false
+}
+```
+
+==**IMPORTANT!**== Make sure you have your notes backed up (via Git or your method of choice) before using Mark#. There's a likely chance that your notes may get altered in unintentional ways with alpha builds.
+
+## Basic User Guide
+
+M# is intended to be intuitive and discoverable, but there are currently a lot of shortcomings that require more implementation and/or specc'ing.
+
+This app intends to follow [Github Flavored Markdown](https://github.github.com/gfm/), but not all features are implemented yet.
+
+In the meantime, a few words about how to use M#:
+
+M# will register as the default Markdown editor in your VS Code instance when you install it (I may alter this behavior pre-launch). Just open up a `.md` Markdown file in VS Code and it _should_ launch (although there seem to be some cases where VS Code doesn't and falls back to the built-in editor. In this case, you can right-click on a .md file in explorer > Open With... > M#.
+
+The M# editor is a [Custom Text Editor](https://code.visualstudio.com/api/extension-guides/custom-editors#custom-text-editor), so when you hit save with the editor opened, it'll perform those operations on the underlying `.md` file. As you type in the M# editor, the updates will propagate to the underlying file in near-real time. However, the M# editor will only get sync'ed up in the following scenarios:
+
+- Opening a document with M# for the first time
+- Bringing the M# editor into focus
+- Saving a document
+
+You can see this in action by opening up the M# editor and the built-in editor side by side. There's a convenience command to quickly setup this view: Right Click in Explorer View > `M#: Split View` (this is just a debugging command and will be removed in the production version).
+
+### Editor Switching
+
+It's convenient to quickly switch between M# and the built-in-editor so that you can take advantage of the viewing/editing pro's of each mode. There's a built in command for this: `Switch Editor Mode`. This is currently assigned a default shortcut of `cmd+y` for Mac or `ctrl+y` for Windows. (Note: if you want to change this shortcut, there will be two different settings called `Switch Editor Mode` - modify both to the same desired shortcut. I'm seeing if I can consolidate it to a single command)
+
+#### Bugs / Limitations
+
+- When switching modes, M# tries to place the cursor in the same position. However, there may be bugs in edge cases where the calculation is incorrect or fails. If M# fails to calculate the cursor position, it'll just move the cursor to the end of the document.
+
+### Draggable Blocks
+
+When you mouse over any element in the document, 6 dots will appear in the left column. You can drag elements to reposition them.
+
+#### Bugs / Limitations
+
+- The drop target can be quite small - when dragging an item, a blue line must appear before releasing the mouse click, else the element won't get repositioned.  It's a bit finicky right now - especially when trying to drop an item at the bottom of the document.
+- Dragging a group of elements - not implemented yet, but something I want to add later.  For example, dragging an H1 and all its children together as one unit.
+
+### Slash Commands (Not yet Available)
+
+Slash commands aren't implemented yet, but the intention is for them to be a primary entry point for doing things in M#. Stay tuned.
+
+## Markdown Features
+
+_This section goes through the capabilities and limitations of M# with respect to each Markdown feature._
+
+### Code Blocks, Diagrams
+
+Type "``` " to trigger a code block
+
+- If you're on the last line of a code block, 'Ctrl+Enter' will add a new paragraph below (discoverability improvements TBD)
+- If you're on the first line of a code block and the code block is at the top of the page, Up Arrow will add a new line above it.
+- M# currently supports syntax highlighting on a limited set of languages in code blocks.
+- M# supports Mermaid diagrams
+
+#### Bugs / Limitations
+
+- Language drop down selector has styling issues
+
+### Lists
+
+- Typing "- " or "1. " on a new line will trigger an unordered / ordered list respectively.
+- Tab / Shift+Tab will alter list-level
+- Hitting 'Enter' twice will exit the list block.
+
+#### Bugs / Limitations
+
+- Checkboxes can't be created or toggled. They can be parsed from an existing document though.
+- To Do: Improve discoverability on list manipulation ergonomics
+
+### Frontmatter
+
+Typing "---" on the first line of a document will generate a frontmatter block.
+
+M# will also format a Header block for any frontmatter field for `title`, as well as a creation date subtext for a field called `created`. This behavior is currently hardcoded, but I want to make it configurable later (the current behavior is biased towards Dendron).
+
+#### Bugs / Limitations
+
+- There's an extra line immediately under the frontmatter block that will cause formatting errors if typed on. It also won't export properly. To avoid issues, don't type in it (I'm aware it's hard to tell which one is the 'wrong' line right now...)
+
+### Links
+
+This just follows Markdown link syntax. Examples:
+
+- Markdown link syntax: [google](www.google.com)
+- Raw url: www.google.com
+
+#### Bugs / Limitations
+
+- Wikilinks not yet supported
+- Editing the link alt-text (inside the square brackets) is finnicky.
+
+### Images
+
+You can paste an image from your clipboard. You can also drag and drop an image, but the behavior is currently very finnicky (see bugs section below). When an image is put into the editor, you'll be prompted for a path. You can also set the setting `mark-sharp.imagePath` to set a default path and avoid the prompt.
+
+#### Bugs / Limitations
+
+- You **must** hold down `shift` **before** starting the drag and until after the drop.
+
+### Tables
+
+You can generate a table by typing |header1|header2| + `space`. The table implementation is still very raw. Not quite ready for selfhost.
+
+#### Bugs / Limitations
+
+- Tables currently span the page width by default
+- The Header row doesn't observe themes.
+- Context Menu Button has alignment issues; Context Menu ergonomics poor.
+
+### Footnotes
+
+#### Bugs / Limitations
+
+- Cursor doesn't automatically move to text box once footnote is generated
+- Can't rename a footnote anchor
+
+### Features Not Yet Implemented
+
+- Collapsible sections (`<details/>` blocks)
+- Math expressions (katex / latex)
+
+## Other Notes
+
+- VSCode's diff view gets messed up when diffing a Markdown file with M# registered as the default Markdown editor.
+
+## Issue Reporting / Feedback
+
+2 ways:
+
+1. Open a bug on Github: https://github.com/jonathanyeung/mark-sharp/issues
+2. Just shoot me a message.
+
+### Areas of Focus
+
+All bug reports are welcome, but a couple of points of bug reporting and feedback are top of mind:
+
+- Usability and ergonomic feedback of the editor
+- Missing markdown features that are important to you
+- Bugs where the underlying markdown gets messed up, i.e. text gets garbled. (These are P0 showstopping bugs.)
+
+Thank you!!!
