@@ -1,10 +1,10 @@
-# Mark Sharp Selfhosting Guide
+# Mark Sharp Alpha Testing Guide
 
 _The extension is referred to as 'M#' in this guide for short_
 
 ## Setup
 
-VSIX Download Link: https://mark-sharp.s3.us-west-2.amazonaws.com/mark-sharp-0.0.1.vsix
+VSIX Download Link: https://mark-sharp.s3.us-west-2.amazonaws.com/mark-sharp-0.0.2.vsix
 
 [Installation Instructions for .VSIX](https://code.visualstudio.com/docs/editor/extension-marketplace#_install-from-a-vsix)
 
@@ -41,6 +41,8 @@ The M# editor is a [Custom Text Editor](https://code.visualstudio.com/api/extens
 
 You can see this in action by opening up the M# editor and the built-in editor side by side. There's a convenience command to quickly setup this view: Right Click in Explorer View > `M#: Split View` (this is just a debugging command and will be removed in the production version).
 
+This is just an FYI - if you work with M# by only having one view of a particular document open at a time, then there shouldn't be any issues in terms of synchronization (see editor switching below).
+
 ### Editor Switching
 
 It's convenient to quickly switch between M# and the built-in-editor so that you can take advantage of the viewing/editing pro's of each mode. There's a built in command for this: `Switch Editor Mode`. This is currently assigned a default shortcut of `cmd+y` for Mac or `ctrl+y` for Windows. (Note: if you want to change this shortcut, there will be two different settings called `Switch Editor Mode` - modify both to the same desired shortcut. I'm seeing if I can consolidate it to a single command)
@@ -58,9 +60,13 @@ When you mouse over any element in the document, 6 dots will appear in the left 
 - The drop target can be quite small - when dragging an item, a blue line must appear before releasing the mouse click, else the element won't get repositioned.  It's a bit finicky right now - especially when trying to drop an item at the bottom of the document.
 - Dragging a group of elements - not implemented yet, but something I want to add later.  For example, dragging an H1 and all its children together as one unit.
 
-### Slash Commands (Not yet Available)
+### Slash Commands
 
-Slash commands aren't implemented yet, but the intention is for them to be a primary entry point for doing things in M#. Stay tuned.
+A basic implementation of slash commands can be triggered by typing '/'. There are basic markdown generation commands available. The intention with the alpha testing is to get a feel for whether slash command driven UI is better or a command palette driven UI per VSCode's paradigms.
+
+The following VSCode equivalent command palette commands are available, more coming later:
+
+- `M#: Insert Mermaid Diagram`
 
 ## Markdown Features
 
@@ -122,13 +128,11 @@ You can paste an image from your clipboard. You can also drag and drop an image,
 
 ### Tables
 
-You can generate a table by typing |header1|header2| + `space`. The table implementation is still very raw. Not quite ready for selfhost.
+You can generate a table by typing |header1|header2| + `space`. The table implementation is still very raw. Not quite ready for alpha testing.
 
 #### Bugs / Limitations
 
-- Tables currently span the page width by default
-- The Header row doesn't observe themes.
-- Context Menu Button has alignment issues; Context Menu ergonomics poor.
+- Context Menu ergonomics poor.
 
 ### Footnotes
 
@@ -144,7 +148,7 @@ You can generate a table by typing |header1|header2| + `space`. The table implem
 
 ## Other Notes
 
-- VSCode's diff view gets messed up when diffing a Markdown file with M# registered as the default Markdown editor.
+- VSCode's diff view gets messed up when diffing a Markdown file with M# registered as the default Markdown editor. If you want to diff a markdown file with the default editor, the only way I've found that you can do it is to temporarily disable M#.
 
 ## Issue Reporting / Feedback
 
