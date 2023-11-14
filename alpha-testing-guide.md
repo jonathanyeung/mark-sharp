@@ -12,7 +12,7 @@ VSIX Download Link: https://mark-sharp.s3.us-west-2.amazonaws.com/mark-sharp-0.0
 
 ==**IMPORTANT!**== Turn off any formatters for Markdown, as this will interfere with the extension:
 
-In `settings.json`, add:
+In your VSCode's `settings.json`, add:
 
 ```json
 "[markdown]": {
@@ -21,7 +21,7 @@ In `settings.json`, add:
 }
 ```
 
-==**IMPORTANT!**== Make sure you have your notes backed up (via Git or your method of choice) before using Mark#. There's a likely chance that your notes may get altered in unintentional ways with alpha builds.
+==**IMPORTANT!**== Make sure you have your notes backed up (via Git or your method of choice) before using Mark#. There's a chance that your notes may get altered in unintentional ways with alpha builds.
 
 ## Basic User Guide
 
@@ -67,6 +67,7 @@ A basic implementation of slash commands can be triggered by typing '/'. There a
 The following VSCode equivalent command palette commands are available, more coming later:
 
 - `M#: Insert Mermaid Diagram`
+- `M#: Insert Table`
 
 ## Markdown Features
 
@@ -80,6 +81,7 @@ Type "``` " to trigger a code block
 - If you're on the first line of a code block and the code block is at the top of the page, Up Arrow will add a new line above it.
 - M# currently supports syntax highlighting on a limited set of languages in code blocks.
 - M# supports Mermaid diagrams
+- Katex blocks and inline equations are supported with `$$` and `$f(x)$` syntax respectively.
 
 #### Bugs / Limitations
 
@@ -93,7 +95,6 @@ Type "``` " to trigger a code block
 
 #### Bugs / Limitations
 
-- Checkboxes can't be created or toggled. They can be parsed from an existing document though.
 - To Do: Improve discoverability on list manipulation ergonomics
 
 ### Frontmatter
@@ -144,7 +145,6 @@ You can generate a table by typing |header1|header2| + `space`. The table implem
 ### Features Not Yet Implemented
 
 - Collapsible sections (`<details/>` blocks)
-- Math expressions (katex / latex)
 
 ## Other Notes
 

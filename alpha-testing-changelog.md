@@ -1,3 +1,21 @@
+## 0.0.3
+
+[0.0.3 Download Link](https://mark-sharp.s3.us-west-2.amazonaws.com/mark-sharp-0.0.3.vsix)
+
+- Check boxes in a check list can now be toggled.
+- Multi-line quote blocks are now parsed correctly
+- Support for Katex, both inline and in blocks.  Inline is triggered with $f(x)$ syntax, while a Katex block can be created by typing `$$ `
+- Fixed issue where deleting an opening formatting tag and then re-adding it wasn't reapplying the formatting.
+- Added a convenience command for inserting tables: `M#: Insert Table`
+- Fixed issue with code block generation when the language had symbols like in "c#" or "c++"
+- Fixed gap styling issue when there are consecutive code blocks on a page
+- Various fixes around cursor placement when toggling between editor modes
+- Fixed issue where empty headers like "### " would disappear and no longer be selectable or editable
+- Pressing Home/End keys will now mimic the behavior of VS Code by moving the cursor to the front and end of the line. It will no longer scroll the webview up or down.
+- Ctrl+F will now open a Find Widget
+- Pressing Shift+Tab anywhere on a 2nd + level list item will now outdent it.
+- Typing "-" followed by "[]" or "[ ]" will now convert the bullet list to a check list
+
 ## 0.0.2
 
 [0.0.2 Download Link](https://mark-sharp.s3.us-west-2.amazonaws.com/mark-sharp-0.0.2.vsix)
