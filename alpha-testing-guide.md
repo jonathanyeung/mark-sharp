@@ -4,7 +4,7 @@ _The extension is referred to as 'M#' in this guide for short_
 
 ## Setup
 
-VSIX Download Link: https://mark-sharp.s3.us-west-2.amazonaws.com/mark-sharp-0.0.2.vsix
+VSIX Download Link: https://mark-sharp.s3.us-west-2.amazonaws.com/mark-sharp-0.0.4.vsix
 
 [Installation Instructions for .VSIX](https://code.visualstudio.com/docs/editor/extension-marketplace#_install-from-a-vsix)
 
@@ -33,15 +33,7 @@ In the meantime, a few words about how to use M#:
 
 M# will register as the default Markdown editor in your VS Code instance when you install it (I may alter this behavior pre-launch). Just open up a `.md` Markdown file in VS Code and it _should_ launch (although there seem to be some cases where VS Code doesn't and falls back to the built-in editor. In this case, you can right-click on a .md file in explorer > Open With... > M#.
 
-The M# editor is a [Custom Text Editor](https://code.visualstudio.com/api/extension-guides/custom-editors#custom-text-editor), so when you hit save with the editor opened, it'll perform those operations on the underlying `.md` file. As you type in the M# editor, the updates will propagate to the underlying file in near-real time. However, the M# editor will only get sync'ed up in the following scenarios:
-
-- Opening a document with M# for the first time
-- Bringing the M# editor into focus
-- Saving a document
-
-You can see this in action by opening up the M# editor and the built-in editor side by side. There's a convenience command to quickly setup this view: Right Click in Explorer View > `M#: Split View` (this is just a debugging command and will be removed in the production version).
-
-This is just an FYI - if you work with M# by only having one view of a particular document open at a time, then there shouldn't be any issues in terms of synchronization (see editor switching below).
+The M# editor is a [Custom Text Editor](https://code.visualstudio.com/api/extension-guides/custom-editors#custom-text-editor), so when you hit save with the editor opened, it'll perform those operations on the underlying `.md` file. As you type in the M# editor, the updates will propagate to the underlying file in near-real time.
 
 ### Editor Switching
 
@@ -49,7 +41,7 @@ It's convenient to quickly switch between M# and the built-in-editor so that you
 
 #### Bugs / Limitations
 
-- When switching modes, M# tries to place the cursor in the same position. However, there may be bugs in edge cases where the calculation is incorrect or fails. If M# fails to calculate the cursor position, it'll just move the cursor to the end of the document.
+- When switching modes, M# tries to place the cursor in the same position. However, there are a few edge cases where the calculation is incorrect or fails. If M# fails to calculate the cursor position, it'll just move the cursor to the end of the document.
 
 ### Draggable Blocks
 
@@ -68,6 +60,7 @@ The following VSCode equivalent command palette commands are available, more com
 
 - `M#: Insert Mermaid Diagram`
 - `M#: Insert Table`
+- `M#: Insert Footnote`
 
 ## Markdown Features
 
@@ -97,16 +90,6 @@ Type "``` " to trigger a code block
 
 - To Do: Improve discoverability on list manipulation ergonomics
 
-### Frontmatter
-
-Typing "---" on the first line of a document will generate a frontmatter block.
-
-M# will also format a Header block for any frontmatter field for `title`, as well as a creation date subtext for a field called `created`. This behavior is currently hardcoded, but I want to make it configurable later (the current behavior is biased towards Dendron).
-
-#### Bugs / Limitations
-
-- There's an extra line immediately under the frontmatter block that will cause formatting errors if typed on. It also won't export properly. To avoid issues, don't type in it (I'm aware it's hard to tell which one is the 'wrong' line right now...)
-
 ### Links
 
 This just follows Markdown link syntax. Examples:
@@ -116,7 +99,7 @@ This just follows Markdown link syntax. Examples:
 
 #### Bugs / Limitations
 
-- Wikilinks not yet supported
+- Wikilinks not currently supported
 - Editing the link alt-text (inside the square brackets) is finnicky.
 
 ### Images
@@ -129,22 +112,36 @@ You can paste an image from your clipboard. You can also drag and drop an image,
 
 ### Tables
 
-You can generate a table by typing |header1|header2| + `space`. The table implementation is still very raw. Not quite ready for alpha testing.
+You can generate a table by typing |header1|header2| + `space`. You can also generate a table by using a slash command and entering the desired dimensions, for example `/2x3`. A VS Code command also exists, `M#: Insert Table`. The table implementation is still quite raw.
 
 #### Bugs / Limitations
 
 - Context Menu ergonomics poor.
+- Text formatting (bold, italics) don't work in table cells
 
 ### Footnotes
 
+You can generate footnotes with a slash command `/footnote` or with the VS Code command `M#: Insert Footnote`. Footnotes generated this way will automatically increment, and the reference text will be placed at the bottom of the document.  Furthermore, if a URL is detected on the clipboard, then it'll be used as the footnote text. (This behavior may later prove to be too weird and be removed). ou can also generate a footnote by typing out a matching anchor/reference pair with `[^1]` and on a separate line typing `[^1]: foo`
+
 #### Bugs / Limitations
 
-- Cursor doesn't automatically move to text box once footnote is generated
-- Can't rename a footnote anchor
+- Cursor doesn't automatically move to text box once footnote is generated.
+- If you manually type out (or modify) the footnote anchor, the parsing logic currently only will trigger when typing a space after the concluding ']'.
+
+### Frontmatter
+
+Typing "---" on the first line of a document will generate a [frontmatter](https://jekyllrb.com/docs/front-matter/) block. Clicking on the faint 'Frontmatter' text at the top of the document will expand the frontmatter for editing; clicking elsewhere in the document will hide it.
+
+M# will also format a Header block for any frontmatter field for `title`, as well as a creation date subtext for a field called `created`. This behavior is currently hardcoded, but I want to make it configurable later (the current behavior is biased towards Dendron).
+
+#### Bugs / Limitations
+
+- There's an extra line immediately under the frontmatter block that will cause formatting errors if typed on. It also won't export properly. To avoid issues, don't type in it (I'm aware it's hard to tell which one is the 'wrong' line right now...)
 
 ### Features Not Yet Implemented
 
-- Collapsible sections (`<details/>` blocks)
+- Collapsible sections (`<details/>` blocks) and other raw HTML elements.
+- A presentation mode that is read-only that won't cause markdown elements (such as '#', '*', '_') to be expanded and cleans up other unnecessary UI elements.
 
 ## Other Notes
 
