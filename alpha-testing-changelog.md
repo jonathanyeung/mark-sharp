@@ -1,3 +1,22 @@
+## 0.0.4
+
+[0.0.4 Download Link](https://mark-sharp.s3.us-west-2.amazonaws.com/mark-sharp-0.0.4.vsix)
+
+- Fixes critical skew bug around undo/redo. Previously, using undo/redo would likely cause the document offset to get skewed, which in turn caused the document to get garbled.
+- Improvements to tables
+    - Arrow keys and tabs work much better now when the cell editor is in focus
+    - Add/Remove header option has been removed, since markdown tables always have a header
+    - Fixed a bug where a table sometimes would get locked by the selection and couldn't be edited
+    - Column left/right/center alignments can now be altered in the table context menu and will be properly imported/exported to markdown.
+- Fixed an issue with formatted text (bold, italics) where clicking into the middle of a node and then typing would cause weird cursor jumping issues
+- Fixed some issues where pressing 'END' wouldn't always move the cursor to the end of the line when formatted text was present
+- Improvements to footnotes
+    - Introduced a new command `M#: Insert Footnote` and a corresponding slash command that will insert a footnote. Footnote references added this way get placed at the end of a document and the keys will auto-increment. If a URL is detected on the clipboard, then it'll be used as the footnote text. (This behavior may later prove to be too weird and be removed). 
+    - The footnote anchor will now show the raw syntax `[^1]` when in focus. The key can be edited, which will also update the corresponding reference key. Breaking the footnote anchor pattern will remove the footnote. Some usability issues still exist here, particularly in re-detecting the anchor (you need to type out an additional space after the trailing ']' to trigger it.)
+    - Hovering over a footnote anchor will show the reference text
+    - Some minor styling enhancements in the footnote section
+    - Bug fixes around Enter and deletion/reversion of footnote anchors
+
 ## 0.0.3
 
 [0.0.3 Download Link](https://mark-sharp.s3.us-west-2.amazonaws.com/mark-sharp-0.0.3.vsix)
