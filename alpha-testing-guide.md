@@ -4,7 +4,7 @@ _The extension is referred to as 'M#' in this guide for short_
 
 ## Setup
 
-VSIX Download Link: https://mark-sharp.s3.us-west-2.amazonaws.com/mark-sharp-0.0.4.vsix
+VSIX Download Link: https://mark-sharp.s3.us-west-2.amazonaws.com/mark-sharp-0.0.5.vsix
 
 [Installation Instructions for .VSIX](https://code.visualstudio.com/docs/editor/extension-marketplace#_install-from-a-vsix)
 
