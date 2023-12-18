@@ -25,7 +25,7 @@ In your VSCode's `settings.json`, add:
 
 ## Basic User Guide
 
-M# is intended to be intuitive and discoverable, but there are currently a lot of shortcomings that require more implementation and/or specc'ing.
+M# is intended to be intuitive and discoverable, but there are currently a lot of shortcomings that require more implementation and/or spec'ing.
 
 This app intends to follow [Github Flavored Markdown](https://github.github.com/gfm/), but not all features are implemented yet.
 
@@ -43,15 +43,6 @@ It's convenient to quickly switch between M# and the built-in-editor so that you
 
 - When switching modes, M# tries to place the cursor in the same position. However, there are a few edge cases where the calculation is incorrect or fails. If M# fails to calculate the cursor position, it'll just move the cursor to the end of the document.
 
-### Draggable Blocks
-
-When you mouse over any element in the document, 6 dots will appear in the left column. You can drag elements to reposition them.
-
-#### Bugs / Limitations
-
-- The drop target can be quite small - when dragging an item, a blue line must appear before releasing the mouse click, else the element won't get repositioned.  It's a bit finicky right now - especially when trying to drop an item at the bottom of the document.
-- Dragging a group of elements - not implemented yet, but something I want to add later.  For example, dragging an H1 and all its children together as one unit.
-
 ### Slash Commands
 
 A basic implementation of slash commands can be triggered by typing '/'. There are basic markdown generation commands available. The intention with the alpha testing is to get a feel for whether slash command driven UI is better or a command palette driven UI per VSCode's paradigms.
@@ -61,6 +52,19 @@ The following VSCode equivalent command palette commands are available, more com
 - `M#: Insert Mermaid Diagram`
 - `M#: Insert Table`
 - `M#: Insert Footnote`
+
+### Collapsible Headers
+
+For each header element, there's a collapsible chevron that will appear if you mouse over the area immediately to the left of the header. Click the chevron to toggle the child contents of that header. The fold states will sync up with the VSCode editor if you use the `Switch Editor Mode` command.
+
+### Draggable Blocks
+
+When you mouse over any element in the document, 6 dots will appear in the left column. You can drag elements to reposition them.
+
+#### Bugs / Limitations
+
+- The drop target can be quite small - when dragging an item, a blue line must appear before releasing the mouse click, else the element won't get repositioned.  It's a bit finicky right now - especially when trying to drop an item at the bottom of the document.
+- Dragging a group of elements - not implemented yet, but something I want to add later.  For example, dragging an H1 and all its children together as one unit.
 
 ## Markdown Features
 
@@ -133,10 +137,6 @@ You can generate footnotes with a slash command `/footnote` or with the VS Code 
 Typing "---" on the first line of a document will generate a [frontmatter](https://jekyllrb.com/docs/front-matter/) block. Clicking on the faint 'Frontmatter' text at the top of the document will expand the frontmatter for editing; clicking elsewhere in the document will hide it.
 
 M# will also format a Header block for any frontmatter field for `title`, as well as a creation date subtext for a field called `created`. This behavior is currently hardcoded, but I want to make it configurable later (the current behavior is biased towards Dendron).
-
-#### Bugs / Limitations
-
-- There's an extra line immediately under the frontmatter block that will cause formatting errors if typed on. It also won't export properly. To avoid issues, don't type in it (I'm aware it's hard to tell which one is the 'wrong' line right now...)
 
 ### Features Not Yet Implemented
 

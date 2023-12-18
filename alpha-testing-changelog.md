@@ -1,3 +1,24 @@
+## 0.0.5
+
+[0.0.5 Download Link](https://mark-sharp.s3.us-west-2.amazonaws.com/mark-sharp-0.0.5.vsix)
+
+- Fixed an issue with cursor placement when switching to the editor while on a blank line
+- Fixed some copy paste issues with formatted text
+- Fixed the extra 'ghost' line issue that appeared immediately after Frontmatter blocks
+- Added Collapsible Headers.
+    - For each header element, there's now a collapsible chevron that will appear if you mouse over the area immediately to the left of the header. Click the chevron to toggle the child contents of that header.
+    - Switching editor mode will sync the fold status of the headers.
+    - I added two convenience commands: `M#: Fold All` and `M#: Unfold All`. These behave exactly like the built-in `Fold All` and `Unfold All` commands, but are available when M# is open. I haven't added additional fold commands (VSCode has a whole slew of them), since you can quickly switch back to the VSCode editor, run fold commands as you wish, then go back to M#, and the fold status will sync over.
+    - **Note**: Setting the folding state on the vscode editor side takes a couple hundred milliseconds - so if you jam the 'switch editor' command repeatedly, the folds may get out of the state you expect.
+- Persisted cursor position - if you switch between M# tabs, the cursor should remain at its last position for each respective tab.
+- Fixed an issue where using a vscode [chord shortcut](https://code.visualstudio.com/docs/getstarted/keybindings#_keyboard-rules) (for example `ctrl+k, m` / `cmd+k, m`) would type an 'm' character in M#. The code will stop the additional keypress for any chords registered to `ctrl/cmd+k` or `ctrl/cmd+j`, but not others. A follow up is to make his work for all chord shorctcuts of the user.
+- Theming fixes
+    - Improved dark theme visibility on the table add row/column buttons and the cell context menu button. It's still not perfect yet.
+    - Fixed dark theme with mermaid diagrams. I also enhanced the look a little bit to match the current VS Code theme.
+    - Improved dark themes around code block menus
+- Fixed an issue when there are multiple mermaid diagrams on the same page.
+- Fixed an issue here Ctrl+A / Select All would cause a crash. There are still some problematic cases with select-all.
+
 ## 0.0.4
 
 [0.0.4 Download Link](https://mark-sharp.s3.us-west-2.amazonaws.com/mark-sharp-0.0.4.vsix)
@@ -11,7 +32,7 @@
 - Fixed an issue with formatted text (bold, italics) where clicking into the middle of a node and then typing would cause weird cursor jumping issues
 - Fixed some issues where pressing 'END' wouldn't always move the cursor to the end of the line when formatted text was present
 - Improvements to footnotes
-    - Introduced a new command `M#: Insert Footnote` and a corresponding slash command that will insert a footnote. Footnote references added this way get placed at the end of a document and the keys will auto-increment. If a URL is detected on the clipboard, then it'll be used as the footnote text. (This behavior may later prove to be too weird and be removed). 
+    - Introduced a new command `M#: Insert Footnote` and a corresponding slash command that will insert a footnote. Footnote references added this way get placed at the end of a document and the keys will auto-increment. If a URL is detected on the clipboard, then it'll be used as the footnote text. (This behavior may later prove to be too weird and be removed).
     - The footnote anchor will now show the raw syntax `[^1]` when in focus. The key can be edited, which will also update the corresponding reference key. Breaking the footnote anchor pattern will remove the footnote. Some usability issues still exist here, particularly in re-detecting the anchor (you need to type out an additional space after the trailing ']' to trigger it.)
     - Hovering over a footnote anchor will show the reference text
     - Some minor styling enhancements in the footnote section
