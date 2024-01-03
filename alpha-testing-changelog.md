@@ -1,3 +1,23 @@
+## 0.0.6
+
+[0.0.6 Download Link](https://mark-sharp.s3.us-west-2.amazonaws.com/mark-sharp-0.0.6.vsix)
+
+- When highlighting a selection, formatted text in the middle of the selection no longer get expanded. If the anchor or focus cursors are inside formatted text, they will continue to be expanded.
+- Fixed an issue where `Ctrl/Cmd + A` Select-All wouldn't keep the selection or error out when the document has a code block.
+- Slash command improvements:
+    - Added icons, cleaned up some styling; menu now reflects the current theme
+    - Fixed the 'code' command that generates code blocks
+    - Fixed cursor placement issues when using a 'header' command
+    - Added an explicit entry for creating a table.  Note: typing a dimension (such as 3x5) can create a table of your desired dimension.
+- Theme fixes in checkboxes, tables, quote blocks, and text selection.
+- Table improvements:
+    - Tables will be neatly formatted when exported in markdown to make columns align.
+    - The cell action button (the down chevron icon) has been removed to free up space in the cell.  The same menu can now be accessed with a right click.
+    - Clicking near the left edge of the table can now select an entire row; clicking near the top edge of a column will select the entire column. Clicking on the top left corner will select the entire table.
+    - Fixed an issue where copying cells from the header and pasting it in a non-header row would cause the non-header row to have the same background shading as the header.
+- Fixed a handful of copy / paste errors that were failing to paste and causing 'Minified Lexical Error 113' messages to show up.
+- Fixed a theming issue with Mermaid diagrams
+
 ## 0.0.5
 
 [0.0.5 Download Link](https://mark-sharp.s3.us-west-2.amazonaws.com/mark-sharp-0.0.5.vsix)
