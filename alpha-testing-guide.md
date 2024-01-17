@@ -4,7 +4,7 @@ _The extension is referred to as 'M#' in this guide for short_
 
 ## Setup
 
-VSIX Download Link: https://mark-sharp.s3.us-west-2.amazonaws.com/mark-sharp-0.0.6.vsix
+VSIX Download Link: https://mark-sharp.s3.us-west-2.amazonaws.com/mark-sharp-0.0.7.vsix
 
 [Installation Instructions for .VSIX](https://code.visualstudio.com/docs/editor/extension-marketplace#_install-from-a-vsix)
 
@@ -37,15 +37,15 @@ The M# editor is a [Custom Text Editor](https://code.visualstudio.com/api/extens
 
 ### Editor Switching
 
-It's convenient to quickly switch between M# and the built-in-editor so that you can take advantage of the viewing/editing pro's of each mode. There's a built in command for this: `Switch Editor Mode`. This is currently assigned a default shortcut of `cmd+y` for Mac or `ctrl+y` for Windows. (Note: if you want to change this shortcut, there will be two different settings called `Switch Editor Mode` - modify both to the same desired shortcut. I'm seeing if I can consolidate it to a single command)
+It's convenient to quickly switch between M# and the built-in-editor so that you can take advantage of the viewing/editing pro's of each mode. There's a built in command for this: `Switch Editor Mode`. This is assigned a default shortcut of `cmd+k y` for Mac or `ctrl+k y` for Windows (picked so that it's unlikely to interfere with existing shortcuts). I recommend modifying this shortcut to something easier.
 
 #### Bugs / Limitations
 
-- When switching modes, M# tries to place the cursor in the same position. However, there are a few edge cases where the calculation is incorrect or fails. If M# fails to calculate the cursor position, it'll just move the cursor to the end of the document.
+- When switching modes, M# tries to place the cursor in the same position. However, there are a few edge cases where the calculation is incorrect or fails. If M# fails to calculate the cursor position, the cursor will be moved to the end of the document.
 
 ### Slash Commands
 
-A basic implementation of slash commands can be triggered by typing '/'. There are basic markdown generation commands available. The intention with the alpha testing is to get a feel for whether slash command driven UI is better or a command palette driven UI per VSCode's paradigms.
+Slash commands can be triggered by typing '/'. There are basic markdown generation commands available for things like tables, mermaid diagrams, lists, and headers.
 
 The following VSCode equivalent command palette commands are available, more coming later:
 
@@ -65,6 +65,7 @@ When you mouse over any element in the document, 6 dots will appear in the left 
 
 - The drop target can be quite small - when dragging an item, a blue line must appear before releasing the mouse click, else the element won't get repositioned.  It's a bit finicky right now - especially when trying to drop an item at the bottom of the document.
 - Dragging a group of elements - not implemented yet, but something I want to add later.  For example, dragging an H1 and all its children together as one unit.
+- **BUG**: Dragging collapsed headers will cause sections to get out of order.
 
 ## Markdown Features
 
@@ -74,17 +75,13 @@ _This section goes through the capabilities and limitations of M# with respect t
 
 Type "``` " to trigger a code block
 
-- If you're on the last line of a code block, 'Ctrl+Enter' will add a new paragraph below (discoverability improvements TBD)
-- If you're on the first line of a code block and the code block is at the top of the page, Up Arrow will add a new line above it.
+- If you're on the last line of a code block, `Shift+Enter` will add a new paragraph below (discoverability improvements TBD)
+- If you're on the first line of a code block and the code block is at the top of the page, `Up Arrow` will add a new line above it.
 - M# currently supports syntax highlighting on a limited set of languages in code blocks.
 - M# supports Mermaid diagrams
 - Katex blocks and inline equations are supported with `$$` and `$f(x)$` syntax respectively.
 
-#### Bugs / Limitations
-
-- Language drop down selector has styling issues
-
-### Lists
+### Lists 
 
 - Typing "- " or "1. " on a new line will trigger an unordered / ordered list respectively.
 - Tab / Shift+Tab will alter list-level
@@ -120,7 +117,6 @@ You can generate a table by typing |header1|header2| + `space`. You can also gen
 
 #### Bugs / Limitations
 
-- Context Menu ergonomics poor.
 - Text formatting (bold, italics) don't work in table cells
 
 ### Footnotes

@@ -1,3 +1,44 @@
+## 0.0.7
+
+[0.0.7 Download Link](https://mark-sharp.s3.us-west-2.amazonaws.com/mark-sharp-0.0.7.vsix)
+
+==**Breaking Change**==: With 0.0.7, you will need to update your keyboard shortcut for the `Switch Editor Mode` command. Please do the following after installing 0.0.7:
+
+1. In VSCode Command Palette: `> Open Default Keyboard Shortcuts (JSON)`.
+2. In keybindings.json, delete these two entries if they exist:
+    1. `"command": "mark-sharp.go-to-source"`
+    2. `"command": "mark-sharp.go-to-wysiwyg"`
+3. Also in keybindings.json, update the key binding for `"command": "mark-sharp.switch-editor-mode"` to your desired keystroke.  It used to be `cmd+y` / `ctrl+y` for mac/Windows respectively.
+
+_Explanation_: 0.0.7 consolidates the switch editor mode functionality into a single command, which is now called `mark-sharp.switch-editor-mode`, whereas previously two separate commands controlled this behavior (I titled the two commands the same to hide this fact). Sideloading the app _may_ not remove the existing keybindings, and those commands no longer exist so VS Code will show an error when you press it. I also changed the default from `ctrl+y` to the chord press `ctrl+k y` because I forgot that this is the shortcut for 'Redo' in Windows... I think it's safer to assign it to an obscure keystroke initially and let the user change it themselves.
+
+**Other 0.0.7 Updates**:
+
+- Ctrl/Cmd+B will now properly bold text; Ctrl/Cmd+I will now properly italicize text.
+    - **Note 1**: these commands won't do anything (by design) if your cursor highlight spans multiple lines or spans certain non-formattable elements.
+    - **Note 2**: these may interfere with your workflow if you already have Cmd+B / I mapped to a VS Code shortcut; you may start accidentally bolding and italicizing your document when trying to trigger your VSCode shortcut action. I'll probably add a setting later to disable these formatting shortcuts.
+- Fixed a few theming issues for the inline Katex equation editor that made text hard to read in dark mode.
+- Headings can now have formatted text within them; fixed an issue where new-lining in the middle of a header would cause the new line to also have header formatting.
+- Code Block Fixes:
+    - **Behavioral Change**: Instead of `Ctrl+Enter` exiting a code block when the cursor is on the last line, the key combo is now `Shift+Enter`. As before, `ArrowDown` will also exit a code block when pressed on the last line, even if there isn't a subsequent paragraph.
+    - Fixed an issue where pressing `Enter` in an empty code block wouldn't do anything.
+    - Some fixes in Frontmatter blocks that would put it in an invalid state
+- Quote Block Fixes:
+    - Quote blocks can now have nested elements, such as headers, code blocks, and other quote blocks.
+    - Improved Quote block ergonomics:
+        - `Shift+Enter` will exit a quote block. `Shift+Enter` in the middle of a quote block will split it into two; Shift+Enter on the last line will add an empty paragraph outside the quote block
+        - `Enter` inside a quote block will now create a new line within the quote block
+        - `ArrowDown` on the last line of a quote block will create an empty paragraph if it doesn't exist
+        - If the quote block is at the top of the document, `ArrowUp` on the first line of a quote block will add a line above
+    - Fixed a few import/export issues with quote blocks.
+    - Improved quote block styling
+- Fixed a styling issue where the page would have a scroll bar even if the document was empty. Footnotes will also appear within the viewport if the note height is short enough to allow it.
+- Fixed a styling issue where the collapsible header sidebar would be obscured if the page contents was too wide.
+- Fixed an issue where using `Shift+Enter` in a normal paragraph would cause the exported Markdown to have unexpected line breaks.
+- When both M# and the VS Code editor are visible at the same time, editing on the VS Code side will now push updates to M#. This should prevent any out-of-sync issues with the editors.  Now you can have both views open together and edit on either side - furthermore, the `switch-editor-mode` command will now work in side-by-side mode as well, instead of always re-opening the doc in the existing tab group.
+    - **Note**: when the editor pushes an update to M#, M#'s current implementation re-renders the entire document - if you have tables or diagrams, it leads to unsightly flashing; performance may also be slower for large documents.
+- A licensing page has been added (`M#: Manage License`). If you're curious or want to test it out, see [instructions here](./licensing-and-activation.md). Activation (or lack thereof) doesn't affect any M# functionality in alpha builds. And when the time comes, all alpha testers will get free licenses :)
+
 ## 0.0.6
 
 [0.0.6 Download Link](https://mark-sharp.s3.us-west-2.amazonaws.com/mark-sharp-0.0.6.vsix)
