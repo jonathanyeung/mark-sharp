@@ -1,3 +1,30 @@
+## 0.0.8
+
+[0.0.8 Download Link](https://mark-sharp.s3.us-west-2.amazonaws.com/mark-sharp-0.0.8.vsix)
+
+- Fixed a cursor jumping issue when creating a formatting tag in the middle of a line
+- Fixed an issue where in some cases, typing a `- ` in the middle of a paragraph would create a list item and delete some text
+- Fixed a regression from 0.0.7 where `Switch Editor Mode` wouldn't work sometimes with a newly opened document. Also fixed an issue where `Switch Editor Mode` wouldn't work when the cursor was at the end of a line with trailing whitespace
+    - Made an enhancement with `Switch Editor Mode` that will attempt to place the cursor in the same general vertical position of the screen; this makes it a bit easier to find your cursor when switching modes.
+- **Performance Fix**: Fixed an issue where pasting a larger block of text _or_ deleting a larger block of text would be very slow, sometimes even crashing M#.
+- Fixed some cases where pasting would fail with a "Lexical 113 Error".
+- Fixed an issue where when using a VS Code chord shortcut that included a modifier, for example `Cmd + K, Cmd + C`, the trailing letter 'C' would get typed.
+- Fixed an issue where if you did an `UNDO` immediately after opening a document, the document would disappear.
+- **List Enhancements**
+    - Multi-line list items are now handled properly according to the GFW spec:
+        - When you're in a list item, press `Shift+Enter` to create a new line within the current list item. You can add other elements as children to a list item - code blocks, quote blocks, etc.
+        - Indentation level is now properly imported and exported
+    - A lot of ergonomic improvements have been made to largely mimic the experience found in Microsoft Word. Here's a summary of the behavior:
+        - `Enter` on an existing list item will create a new list item.
+        - `Enter` on a blank list item will outdent one level, or exit the list block if at the top level
+        - `Backspace` at the beginning of an list item will delete the list item.
+        - `Shift+Enter` will add a new line to the current list item.
+        - `Tab` will increase the indentation level, but now with an added restriction that you can only go one level higher than the previous sibling, as Markdown has this restriction.
+        - `Shift+Tab` will decrease the indentation level.
+        - Typing `- []` or `- [ ]` will create a check list (same behavior as before).
+        - You can convert a list type by having the cursor on a list item, and then activate a slash command and selecting your desired list type.
+    - Whenever two lists are placed immediately next to each other and are of the same type (numbered, bulleted, or a checklist), they will get merged. You can always separate them at the desired point with `Backspace`.
+
 ## 0.0.7
 
 [0.0.7 Download Link](https://mark-sharp.s3.us-west-2.amazonaws.com/mark-sharp-0.0.7.vsix)

@@ -4,7 +4,7 @@ _The extension is referred to as 'M#' in this guide for short_
 
 ## Setup
 
-VSIX Download Link: https://mark-sharp.s3.us-west-2.amazonaws.com/mark-sharp-0.0.7.vsix
+VSIX Download Link: https://mark-sharp.s3.us-west-2.amazonaws.com/mark-sharp-0.0.8.vsix
 
 [Installation Instructions for .VSIX](https://code.visualstudio.com/docs/editor/extension-marketplace#_install-from-a-vsix)
 
@@ -84,12 +84,14 @@ Type "``` " to trigger a code block
 ### Lists 
 
 - Typing "- " or "1. " on a new line will trigger an unordered / ordered list respectively.
-- Tab / Shift+Tab will alter list-level
-- Hitting 'Enter' twice will exit the list block.
-
-#### Bugs / Limitations
-
-- To Do: Improve discoverability on list manipulation ergonomics
+- `Enter` on an existing list item will create a new list item.
+- `Enter` on a blank list item will outdent one level, or exit the list block if at the top level
+- `Backspace` at the beginning of an list item will delete the list item.
+- `Shift+Enter` will add a new line to the current list item.
+- `Tab` will increase the indentation level, but now with an added restriction that you can only go one level higher than the previous sibling, as Markdown has this restriction.
+- `Shift+Tab` will decrease the indentation level.
+- Typing `- []` or `- [ ]` will create a check list (same behavior as before).
+- You can convert a list type by having the cursor on a list item, and then activate a slash command and selecting your desired list type.
 
 ### Links
 
