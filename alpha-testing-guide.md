@@ -4,7 +4,7 @@ _The extension is referred to as 'M#' in this guide for short_
 
 ## Setup
 
-VSIX Download Link: https://mark-sharp.s3.us-west-2.amazonaws.com/mark-sharp-0.0.8.vsix
+VSIX Download Link: https://mark-sharp.s3.us-west-2.amazonaws.com/mark-sharp-0.0.9.vsix
 
 [Installation Instructions for .VSIX](https://code.visualstudio.com/docs/editor/extension-marketplace#_install-from-a-vsix)
 
@@ -52,6 +52,7 @@ The following VSCode equivalent command palette commands are available, more com
 - `M#: Insert Mermaid Diagram`
 - `M#: Insert Table`
 - `M#: Insert Footnote`
+- `M#: Insert Image`
 
 ### Collapsible Headers
 
@@ -100,14 +101,15 @@ This just follows Markdown link syntax. Examples:
 - Markdown link syntax: [google](www.google.com)
 - Raw url: www.google.com
 
-#### Bugs / Limitations
-
-- Wikilinks not currently supported
-- Editing the link alt-text (inside the square brackets) is finnicky.
-
 ### Images
 
-You can paste an image from your clipboard. You can also drag and drop an image, but the behavior is currently very finnicky (see bugs section below). When an image is put into the editor, you'll be prompted for a path. You can also set the setting `mark-sharp.imagePath` to set a default path and avoid the prompt.
+There are several ways to add images to your document:
+
+1. You can paste an image from your clipboard. 
+2. You can also drag and drop an image, but the behavior is currently very finnicky (see bugs section below). 
+3. Using the slash command /image or `M#: Insert Image`, you can pick an image from a file picker.
+
+When an image is put into the editor, you'll be prompted for a path. You can also set the setting `mark-sharp.imagePath` to set a default path and avoid the prompt.
 
 #### Bugs / Limitations
 

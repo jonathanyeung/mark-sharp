@@ -1,3 +1,26 @@
+## 0.0.9
+
+[0.0.9 Download Link](https://mark-sharp.s3.us-west-2.amazonaws.com/mark-sharp-0.0.9.vsix)
+
+- **Upgraded Slash Commands**
+    - Revamped the look of the slash command menu
+    - Experimenting with sub-menus on Headings and Mermaid Diagram to reduce clutter on the initial menu. Note: you can still type `/h1` to create a heading 1 without needing to navigate the submenus.
+    - Re-ordered the initial list of options
+    - Added UI hints around `/mxn` table generation
+    - Fixed an issue where a mouse pointer could interfere with arrow scrolling of the menu
+    - Added a 'No Results' UI feedback item if all possiblities have been filtered. Previously, the menu would automatically close.
+- **Improved Markdown Links**
+    - There was a usability issue when clicking on a Markdown-formatted link would immediately open the URL _and then_ expand the text, making it hard to modify the link text without also opening it. The behavior has been changed so that if you click on a formatted link, the cursor will first get placed into the text, thus expanding it - you can then click on the now-visible URL if you want to launch the URL, or you can start typing to manipulate the link text. Furthermore, the link text and the `[`, `(` characters are no longer part of the <a/> tag, so manipulating the unformatted link text is easier.
+    - Link syntax parsing is much more robust now. For example, adding the missing `]` to `[link text(www.google.com)` will now parse into a link. Previously, the only trigger would be the trailing `)` character.
+- **Table Tweaks**:
+    - Fixed issue where imported tables would have cells with leading and trailing whitespaces
+    - Enhanced styling of table context menu
+- **Image Tweaks**:
+    - The markdown textbox below an image is no longer expanded by default
+    - Fixed a dark theme issue with the cursor in the markdown definition textbox
+    - Added a slash command `/image` and a corresponding VS Code command `M#: Insert Image` that inserts an mage from a file picker.
+- Updated the logo
+
 ## 0.0.8
 
 [0.0.8 Download Link](https://mark-sharp.s3.us-west-2.amazonaws.com/mark-sharp-0.0.8.vsix)
