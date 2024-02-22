@@ -11,7 +11,7 @@ Mark Sharp is based on [Github Flavored Markdown](https://github.github.com/gfm/
 1. _Pre-requisite_: First install [VS Code](https://code.visualstudio.com/) if you haven't already.
 2. Install Mark Sharp from the VS Code Extension Store ==link tbd==
 
-### Launching M#
+### Launching Mark Sharp
 
 There are several ways to launch the M# editor:
 
@@ -39,6 +39,7 @@ You may optionally set Mark Sharp as your default Markdown editor. To do this, I
 
 - [In Depth User Guide](./user-guide.md)
 - [Purchasing a License](./licensing-and-activation.md)
+- Telemetry ==todo==
 
 ## Acknowledgements
 
