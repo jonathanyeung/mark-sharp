@@ -1,6 +1,6 @@
 # Mark Sharp User Guide
 
-> _Note: Some features mentioned in this guide are only available with a Mark Sharp premium license._
+> _Some features mentioned in this guide are only available with a Mark Sharp premium license._
 
 ## Installation
 
@@ -30,17 +30,19 @@ Trigger slash commands by typing '/' while the cursor is at an empty space. Ther
 
 ### Editor Switching
 
-The command `M#: Switch Editor Mode` allows you to quickly switch between M# and the built-in editor so that you can take advantage of the viewing/editing pro's of each mode. This command will place the cursor at the same position so that you can switch modes without losing your context.
+The command `M#: Switch Editor Mode` allows you to quickly switch between M# and the built-in editor so that you can take advantage of the viewing/editing benefits of each mode. This command will place the cursor at the same position so that you can continue working without losing your context.
 
 This is assigned a default shortcut of `cmd+k y` for Mac or `ctrl+k y` for Windows. This shortcut can be modified to a more convenient key combination of your choosing.
 
-> Note: if a document hasn't yet been edited by Mark Sharp, cursor placement may be inaccurate as the markdown definition may be in a state that Mark Sharp doesn't expect.
+> _Note: if a document hasn't yet been edited by Mark Sharp, cursor placement may be inaccurate as the markdown definition may be in a state that Mark Sharp doesn't expect._
 
 ### Collapsible Headers
 
 For each header element, there's a collapsible chevron that will appear if you mouse over the area immediately to the left of the header. Click the chevron to toggle the child contents of that header. The fold states will sync up with the VSCode editor if you use the `M#: Switch Editor Mode` command.
 
 ### Draggable Blocks
+
+_Premium Feature_
 
 When you mouse over any element in the document, 6 dots will appear in the left column. You can drag elements to reposition them.
 
@@ -50,11 +52,11 @@ Markdown elements can be created using familiar Markdown syntax. For example, yo
 
 ### Code Blocks
 
-Type "```" to create a code block, or use the slash command `/code`. You can add a language to the code block like "```javascript " to get syntax highlighting.
+Type three ``` to create a code block, or use the slash command `/code`. You can add a language to the code block like "```javascript " to get syntax highlighting.
 
 - If you're on the last line of a code block, `Shift+Enter` will exit the code block and add a new paragraph below.
 - If you're on the first line of a code block and the code block is at the top of the page, `Up Arrow` will add a new line above it.
-- M# currently supports syntax highlighting on a limited set of languages in code blocks.
+- M# supports syntax highlighting on a limited set of languages in code blocks.
 
 ### Mermaid Diagrams
 
@@ -63,8 +65,6 @@ _Premium Feature_
 M# supports [Mermaid diagrams](https://mermaid.js.org/). To create a mermaid diagram, either use a slash command "/mermaid" or type ```mermaid at the beginning of a line.
 
 ### Katex
-
-_Premium Feature_
 
 - Katex blocks and inline equations are supported with `$$` and `$f(x)$` syntax respectively.
 
@@ -101,13 +101,13 @@ When an image is put into the editor, you'll be prompted for a path. You can als
 
 ### Tables
 
-_Premium Feature_
+_Premium Feature: Tables will render with all versions, but table editing is only available in premium. To edit tables with basic, switch to the VS Code editor._
 
 You can generate a table by typing |header1|header2| + `space`. You can also generate a table by using a slash command and entering the desired dimensions, for example `/2x3`. A VS Code command also exists, `M#: Insert Table`. 
 
-==right click context menu==
-
-==select all==
+- Mousing over the bottom or right edges of the table will bring up a '+' sign to add additional rows or columns
+- Right clicking on a cell brings up a context menu with options for manipulating the table
+- You can click on the top of a column or row to select the entire column or row
 
 ### Footnotes
 
@@ -119,8 +119,6 @@ Typing "---" on the first line of a document will generate a [frontmatter](https
 
 M# will also format a Header block in an H1 title for a frontmatter field named `title` and a creation date subtext for a field called `created`.
 
-## Commands
-
 ## VS Code Commands
 
 Mark Sharp contributes the following VS Code commands. Many of the editing commands are mirrors of options in the slash command menu.
@@ -128,7 +126,7 @@ Mark Sharp contributes the following VS Code commands. Many of the editing comma
 | Command                    | Description                                                                                          |
 | -------------------------- | ---------------------------------------------------------------------------------------------------- |
 | M#: Switch Editor Mode     | Switches between Mark Sharp and the default VS Code editor, maintaining cursor position.             |
-| M#: Insert Mermaid Diagram | Inserts a Mermaid diagram at the current cursor position. A template can be optionally chosen        |
+| M#: Insert Mermaid Diagram | Inserts a Mermaid diagram at the current cursor position. A template can be optionally chosen.       |
 | M#: Insert Table           | Inserts a table; dimensions can be specified                                                         |
 | M#: Insert Image           | Insert an image                                                                                      |
 | M#: Insert Footnote        | Inserts a footnote at the current cursor position.                                                   |
@@ -138,4 +136,14 @@ Mark Sharp contributes the following VS Code commands. Many of the editing comma
 
 ## Settings
 
-Settings can be adjusted in VS Code.
+### Setting Mark Sharp as the default Markdown editor
+
+In the [Explorer](https://code.visualstudio.com/docs/getstarted/userinterface#_explorer) view, **right click** on a Markdown file ( with a `.md` or `.markdown` file extension) > `Open With...` > `Configure Default Editor for '.md'...` >  `M#`. 
+
+### Extension Settings
+
+Manage Mark Sharp settings with [VS Code User and Workspace Settings](https://code.visualstudio.com/docs/getstarted/settings).
+
+| Setting              | Description                                                                                          | Default |
+| -------------------- | ---------------------------------------------------------------------------------------------------- | ------- |
+| mark-sharp.imagePath | The path to the images folder relative to the workspace root. When set, images added to docs will be copied to this folder; if blank, then you will be prompted for a path each time an image is added. | ""      |
