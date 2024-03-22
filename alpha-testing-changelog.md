@@ -1,3 +1,22 @@
+## 0.0.10
+
+[0.0.10 Download Link](https://mark-sharp.s3.us-west-2.amazonaws.com/mark-sharp-0.0.10.vsix)
+
+- Removed the logic of automatically setting M# as the default Markdown editor
+- Fixed Undo/Redo logic on Windows and Linux
+- Fixed an issue where text formatters could cause a crash
+- Fixed a cursor jumping issue whenusing nested text formatters
+- Improved code block and frontmatter block usability issues:
+    - You can now click on a border of code block to select it. Pressing `Backspace` or `Delete` will remove the code block if selected.
+    - Fixed some border issues with code blocks.
+    - Pasting a copied frontmatter block in the middle of a document will convert it to a regular code block
+    - Fixed some layout issues when pasting code blocks.
+    - Fixed some shift+Enter behavior issues with back-to-back code blocks.
+    - Pasting content into a code block will now properly preserve newline delimitations
+- Fixed an issue where sometimes typing after a collapsed header would cause the child contents of the header to be out of order
+- Fixed an issue where sometimes text would still be formatted as a header even if the '#' were deleted.
+- Fixed a few issues around pressing `Enter` in the middle of a list.
+
 ## 0.0.9
 
 [0.0.9 Download Link](https://mark-sharp.s3.us-west-2.amazonaws.com/mark-sharp-0.0.9.vsix)
