@@ -1,3 +1,7 @@
+## Acknowledgements
+
+We would like to acknowledge the use of the following third-party libraries listed below. Mark Sharp would not be possible without these valuable resources.
+
 ### Babel
 
 Copyright (c) 2014-present Sebastian McKenzie and other contributors
