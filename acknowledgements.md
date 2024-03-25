@@ -184,12 +184,6 @@ Copyright (c) 2014-present Matt Zabriskie & Collaborators
 
 [MIT License](https://github.com/axios/axios/blob/v1.x/LICENSE)
 
-### node-rsa
-
-Copyright (c) 2014 rzcoder
-
-[MIT License](https://github.com/rzcoder/node-rsa)
-
 ### reflect-metadata
 
 [Apache 2 License](https://github.com/rbuckton/reflect-metadata?tab=Apache-2.0-1-ov-file#readme)

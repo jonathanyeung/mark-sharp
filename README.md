@@ -1,6 +1,6 @@
 # Mark Sharp
 
-Mark Sharp is a fast, modern Markdown editor for VS Code. With Mark Sharp you can author Markdown documents quickly with standard syntax while still getting the final rendered Markdown state (what-you-see-is-what-you-get).
+Mark Sharp is a fast, modern Markdown editor for VS Code. Write Markdown documents quickly with familiar, standard syntax while still seeing a visually-appealing rendered Markdown document (what-you-see-is-what-you-get).
 
 Mark Sharp is based on [Github Flavored Markdown](https://github.github.com/gfm/) and supports extension features such as tables, Mermaid diagrams, checklists, and more.
 
@@ -9,7 +9,7 @@ Mark Sharp is based on [Github Flavored Markdown](https://github.github.com/gfm/
 ### Installing the Extension
 
 1. _Pre-requisite_: First install [VS Code](https://code.visualstudio.com/) if you haven't already.
-2. Install Mark Sharp from the VS Code Extension Store ==link tbd==
+2. Install Mark Sharp from the VS Code Extension Store (_coming soon_).
 
 ### Launching Mark Sharp
 
@@ -18,23 +18,13 @@ There are several ways to launch the M# editor:
 1. In the [Explorer](https://code.visualstudio.com/docs/getstarted/userinterface#_explorer) view, **right click** on a Markdown file ( with a `.md` or `.markdown` file extension) > `Open With...` > `M#`.
 2. When a markdown file is open in VS Code's default editor, run the command `M#: Switch Editor Mode` from the [command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette).
 
-> _Additional Notes:_
->
-> 1. When you edit a markdown file with Mark Sharp, **your existing document layout may be altered**. It is recommended to back up your documents with a version control system like Git or another method of your choice.
-> 2. In order for Mark Sharp to work correctly, markdown auto-formatting must be disabled. When Mark Sharp runs for the first time, the following lines will be added automatically to your settings.json file:
->
-> ```json
-> "[markdown]": {
->     "editor.defaultFormatter": null,
->     "editor.formatOnSave": false
-> }
-> ```
+> _When you edit a markdown file with Mark Sharp, **your existing document layout may be altered**. It is recommended to back up your documents with a version control system like Git or another method of your choice._
 
 ### Editing Markdown files
 
-- You can use markdown syntax you're familiar with to create Markdown elements.  For example, typing '#' at the beginning of a line will create an H1 header, or surrounding a word with '*' will bold it.
-- You can also use the slash command menu by typing '/' to bring up a menu to quickly insert markdown elements such as lists, tables, images, and diagrams.
-- To switch between Mark Sharp and the built-in VS Code Editor,run the command `M#: Switch Editor Mode` .-This command toggles between the editor mode while maintaining your cursor position so that you can continue working without losing your context.
+- Use familiar markdown syntax to create Markdown elements.  For example, typing '#' at the beginning of a line will create an H1 header, or surrounding a word with '*' will bold it.
+- Type '/' to bring up a slash command menu to quickly insert markdown elements such as lists, tables, images, and diagrams.
+- Use the command `M#: Switch Editor Mode` to switch between Mark Sharp and the built-in VS Code Editor, while maintaining your cursor position so that you can continue working without losing your context.
 
 For a complete guide, see the [in depth user guide](./user-guide.md).
 
