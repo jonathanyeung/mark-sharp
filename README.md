@@ -1,6 +1,6 @@
 # Mark Sharp
 
-Mark Sharp is a fast, modern Markdown editor for VS Code. Write Markdown documents quickly with familiar, standard syntax while still seeing a visually-appealing rendered Markdown document (what-you-see-is-what-you-get).
+[Mark Sharp](https://www.marksharp.co/) is a fast, modern Markdown editor for VS Code. Write Markdown documents quickly with familiar, standard syntax while still seeing a visually-appealing rendered Markdown document.
 
 Mark Sharp is based on [Github Flavored Markdown](https://github.github.com/gfm/) and supports extension features such as tables, Mermaid diagrams, checklists, and more.
 
@@ -9,7 +9,7 @@ Mark Sharp is based on [Github Flavored Markdown](https://github.github.com/gfm/
 ### Installing the Extension
 
 1. _Pre-requisite_: First install [VS Code](https://code.visualstudio.com/) if you haven't already.
-2. Install Mark Sharp from the VS Code Extension Store (_coming soon_).
+2. Install Mark Sharp from the [VS Code Extension Store](https://marketplace.visualstudio.com/items?itemName=jonathan-yeung.mark-sharp).
 
 ### Launching Mark Sharp
 
@@ -32,7 +32,7 @@ For a complete guide, see the [in depth user guide](./user-guide.md).
 
 Mark Sharp works out of the box as a fully functioning Markdown renderer and supports the basics for editing Markdown files. To unlock rich editing features and to support the continued development of Mark Sharp, please see [purchasing a license](./licensing-and-activation.md).
 
-Please read the ==End User License Agreement== and the [Telemetry Notice](./telemetry.md).
+Before using Mark Sharp, pease read the [End User License Agreement](https://www.marksharp.co/eula) and the [Privacy Policy](https://www.marksharp.co/privacy-policy).
 
 ## Acknowledgements
 
