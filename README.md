@@ -15,10 +15,10 @@ Mark Sharp is based on [Github Flavored Markdown](https://github.github.com/gfm/
 
 ### Launching Mark Sharp
 
-There are several ways to launch the M# editor:
+There are several ways to launch the Mark Sharp editor:
 
-1. In the [Explorer](https://code.visualstudio.com/docs/getstarted/userinterface#_explorer) view, **right click** on a Markdown file > `Open With...` > `M#`.
-2. When a markdown file is open in VS Code's default editor, run the command `M#: Switch Editor Mode` from the [command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette).
+1. In the [Explorer](https://code.visualstudio.com/docs/getstarted/userinterface#_explorer) view, **right click** on a Markdown file > `Open With...` > `Mark Sharp`.
+2. When a markdown file is open in VS Code's default editor, run the command `Mark Sharp: Switch Editor Mode` from the [command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette).
 
 > _When you edit a markdown file with Mark Sharp, **your existing document layout may be altered**. It is recommended to back up your documents with a version control system like Git or another method of your choice._
 
@@ -26,7 +26,7 @@ There are several ways to launch the M# editor:
 
 - Use familiar markdown syntax to create Markdown elements.  For example, typing '#' at the beginning of a line will create an H1 header, or surrounding a word with '*' will bold it.
 - Type '/' to bring up a slash command menu to quickly insert markdown elements such as lists, tables, images, and diagrams.
-- Use the command `M#: Switch Editor Mode` to switch between Mark Sharp and the built-in VS Code Editor, while maintaining your cursor position so that you can continue working without losing your context.
+- Use the command `Mark Sharp: Switch Editor Mode` to switch between Mark Sharp and the built-in VS Code Editor, while maintaining your cursor position so that you can continue working without losing your context.
 
 For a complete guide, see the [in depth user guide](./user-guide.md).
 

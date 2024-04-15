@@ -10,10 +10,10 @@ See [Quick Start](./README.md#Quick_Start).
 
 ### Opening a Markdown file with Mark Sharp
 
-There are several ways to launch the M# editor:
+There are several ways to launch the Mark Sharp editor:
 
-1. In the [Explorer](https://code.visualstudio.com/docs/getstarted/userinterface#_explorer) view, **right click** on a Markdown file ( with a `.md` or `.markdown` file extension) > `Open With...` > `M#`. 
-2. When a markdown file is open in VS Code's default editor, run the command `M#: Switch Editor Mode` from the [command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette).
+1. In the [Explorer](https://code.visualstudio.com/docs/getstarted/userinterface#_explorer) view, **right click** on a Markdown file ( with a `.md` or `.markdown` file extension) > `Open With...` > `Mark Sharp`. 
+2. When a markdown file is open in VS Code's default editor, run the command `Mark Sharp: Switch Editor Mode` from the [command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette).
 
 ### Slash Commands
 
@@ -30,7 +30,7 @@ Trigger slash commands by typing '/' while the cursor is at an empty space. Ther
 
 ### Editor Switching
 
-The command `M#: Switch Editor Mode` allows you to quickly switch between M# and the built-in editor so that you can take advantage of the viewing/editing benefits of each mode. This command will place the cursor at the same position so that you can continue working without losing your context.
+The command `Mark Sharp: Switch Editor Mode` allows you to quickly switch between Mark Sharp and the built-in editor so that you can take advantage of the viewing/editing benefits of each mode. This command will place the cursor at the same position so that you can continue working without losing your context.
 
 This is assigned a default shortcut of `cmd+k y` for Mac or `ctrl+k y` for Windows. This shortcut can be modified to a more convenient key combination of your choosing.
 
@@ -38,7 +38,7 @@ This is assigned a default shortcut of `cmd+k y` for Mac or `ctrl+k y` for Windo
 
 ### Collapsible Headers
 
-For each header element, there's a collapsible chevron that will appear if you mouse over the area immediately to the left of the header. Click the chevron to toggle the child contents of that header. The fold states will sync up with the VSCode editor if you use the `M#: Switch Editor Mode` command.
+For each header element, there's a collapsible chevron that will appear if you mouse over the area immediately to the left of the header. Click the chevron to toggle the child contents of that header. The fold states will sync up with the VSCode editor if you use the `Mark Sharp: Switch Editor Mode` command.
 
 ### Draggable Blocks
 
@@ -56,13 +56,13 @@ Type three ``` to create a code block, or use the slash command `/code`. You can
 
 - If you're on the last line of a code block, `Shift+Enter` will exit the code block and add a new paragraph below.
 - If you're on the first line of a code block and the code block is at the top of the page, `Up Arrow` will add a new line above it.
-- M# supports syntax highlighting on a limited set of languages in code blocks.
+- Mark Sharp supports syntax highlighting on a limited set of languages in code blocks.
 
 ### Mermaid Diagrams
 
 _Premium Feature_
 
-M# supports [Mermaid diagrams](https://mermaid.js.org/). To create a mermaid diagram, either use a slash command "/mermaid" or type ```mermaid at the beginning of a line.
+Mark Sharp supports [Mermaid diagrams](https://mermaid.js.org/). To create a mermaid diagram, either use a slash command "/mermaid" or type ```mermaid at the beginning of a line.
 
 ### Katex
 
@@ -95,7 +95,7 @@ There are several ways to add images to your document:
 
 1. You can paste an image from your clipboard. 
 2. You can also drag and drop an image directly into your document. Note: you **must** hold down `shift` **before** starting the drag and until after the drop.
-3. Using the slash command /image or `M#: Insert Image`, you can pick an image from a file picker.
+3. Using the slash command /image or `Mark Sharp: Insert Image`, you can pick an image from a file picker.
 
 When an image is put into the editor, you'll be prompted for a path. You can also set the setting `mark-sharp.imagePath` to set a default path and avoid the prompt.
 
@@ -103,7 +103,7 @@ When an image is put into the editor, you'll be prompted for a path. You can als
 
 _Premium Feature: Tables will render with all versions, but table editing is only available in premium. To edit tables with basic, switch to the VS Code editor._
 
-You can generate a table by typing |header1|header2| + `space`. You can also generate a table by using a slash command and entering the desired dimensions, for example `/2x3`. A VS Code command also exists, `M#: Insert Table`. 
+You can generate a table by typing |header1|header2| + `space`. You can also generate a table by using a slash command and entering the desired dimensions, for example `/2x3`. A VS Code command also exists, `Mark Sharp: Insert Table`. 
 
 - Mousing over the bottom or right edges of the table will bring up a '+' sign to add additional rows or columns
 - Right clicking on a cell brings up a context menu with options for manipulating the table
@@ -111,13 +111,13 @@ You can generate a table by typing |header1|header2| + `space`. You can also gen
 
 ### Footnotes
 
-You can generate footnotes with a slash command `/footnote` or with the VS Code command `M#: Insert Footnote`. Footnotes generated this way will automatically increment, and the reference text will be placed at the bottom of the document.  Furthermore, if a URL is detected on the clipboard, then it'll be used as the footnote text. (This behavior may later prove to be too weird and be removed). ou can also generate a footnote by typing out a matching anchor/reference pair with `[^1]` and on a separate line typing `[^1]: foo`.
+You can generate footnotes with a slash command `/footnote` or with the VS Code command `Mark Sharp: Insert Footnote`. Footnotes generated this way will automatically increment, and the reference text will be placed at the bottom of the document.  Furthermore, if a URL is detected on the clipboard, then it'll be used as the footnote text. (This behavior may later prove to be too weird and be removed). ou can also generate a footnote by typing out a matching anchor/reference pair with `[^1]` and on a separate line typing `[^1]: foo`.
 
 ### Frontmatter
 
 Typing "---" on the first line of a document will generate a [frontmatter](https://jekyllrb.com/docs/front-matter/) block. Clicking on the faint 'Frontmatter' text at the top of the document will expand the frontmatter for editing; clicking elsewhere in the document will hide it.
 
-M# will also format a Header block in an H1 title for a frontmatter field named `title` and a creation date subtext for a field called `created`.
+Mark Sharp will also format a Header block in an H1 title for a frontmatter field named `title` and a creation date subtext for a field called `created`.
 
 ## VS Code Commands
 
@@ -125,20 +125,20 @@ Mark Sharp contributes the following VS Code commands. Many of the editing comma
 
 | Command                    | Description                                                                                          |
 | -------------------------- | ---------------------------------------------------------------------------------------------------- |
-| M#: Switch Editor Mode     | Switches between Mark Sharp and the default VS Code editor, maintaining cursor position.             |
-| M#: Insert Mermaid Diagram | Inserts a Mermaid diagram at the current cursor position. A template can be optionally chosen.       |
-| M#: Insert Table           | Inserts a table; dimensions can be specified                                                         |
-| M#: Insert Image           | Insert an image                                                                                      |
-| M#: Insert Footnote        | Inserts a footnote at the current cursor position.                                                   |
-| M#: Fold All               | Folds all headers in the Mark Sharp editor. Analogous to the built-in 'Fold All' command.            |
-| M#: Unfold All             | Unfolds all headers in the Mark Sharp editor. Analogous to the built-in 'Unfold All' command.        |
-| M#: Manage License         | Opens the licensing page where you can purchase a license, activate a license key, or deactivate your license. |
+| Mark Sharp: Switch Editor Mode     | Switches between Mark Sharp and the default VS Code editor, maintaining cursor position.             |
+| Mark Sharp: Insert Mermaid Diagram | Inserts a Mermaid diagram at the current cursor position. A template can be optionally chosen.       |
+| Mark Sharp: Insert Table           | Inserts a table; dimensions can be specified                                                         |
+| Mark Sharp: Insert Image           | Insert an image                                                                                      |
+| Mark Sharp: Insert Footnote        | Inserts a footnote at the current cursor position.                                                   |
+| Mark Sharp: Fold All               | Folds all headers in the Mark Sharp editor. Analogous to the built-in 'Fold All' command.            |
+| Mark Sharp: Unfold All             | Unfolds all headers in the Mark Sharp editor. Analogous to the built-in 'Unfold All' command.        |
+| Mark Sharp: Manage License         | Opens the licensing page where you can purchase a license, activate a license key, or deactivate your license. |
 
 ## Settings
 
 ### Setting Mark Sharp as the default Markdown editor
 
-In the [Explorer](https://code.visualstudio.com/docs/getstarted/userinterface#_explorer) view, **right click** on a Markdown file ( with a `.md` or `.markdown` file extension) > `Open With...` > `Configure Default Editor for '.md'...` >  `M#`. 
+In the [Explorer](https://code.visualstudio.com/docs/getstarted/userinterface#_explorer) view, **right click** on a Markdown file ( with a `.md` or `.markdown` file extension) > `Open With...` > `Configure Default Editor for '.md'...` >  `Mark Sharp`. 
 
 ### Extension Settings
 
