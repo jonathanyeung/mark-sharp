@@ -84,8 +84,31 @@ Mark Sharp supports [Mermaid diagrams](https://mermaid.js.org/). To create a mer
 
 To create a link, type the display text in [brackets] followed by the address in (parentheses) as per Markdown link syntax. Examples:
 
-- Markdown link syntax: [google](www.google.com)
-- Raw url: www.google.com
+- Markdown link syntax: [google](https://www.google.com)
+- Raw url: `www.google.com`
+
+_Note: web url's must be prefixed with either `https://` or `http://`._
+
+Local files can also be linked by specifying their path relative to the current file. 
+
+- `[my note](./folder/my-note.md)`
+- `[my note](my-note-in-same-folder.md)`
+
+You can also link to a header within a markdown page by adding a suffix of a `#` character followed by the header name. As per markdown syntax, the header name should be converted to lowercase and spaces replaced with hyphens.
+
+- `[my note](my-note.md#header-1)`
+
+Clicking on this link will open `my-note.md` and scroll the document to the header with contents `Header 1`.
+
+### Wikilinks
+
+Wikilinks are also supported for creating links to local files. To create a wikilink, surround the name of the file with double brackets. Including the `.md` file extension is not necessary, but if linking to a non-markdown file, include the file extension. Optionally, an alias can be added after a `|` character that will be displayed when the link is not selected. Examples:
+
+- `[[my file name]]`
+- `[[my file name|alias]]`
+- `[[my image.jpg]]`
+
+In order for a wikilink to resolve, the destination file must be presently opened in the current VS Code folder or workspace. As with regular links, you can optionally add `#header` suffixes to the link path.
 
 ### Images
 
@@ -123,8 +146,8 @@ Mark Sharp will also format a Header block in an H1 title for a frontmatter fiel
 
 Mark Sharp contributes the following VS Code commands. Many of the editing commands are mirrors of options in the slash command menu.
 
-| Command                    | Description                                                                                          |
-| -------------------------- | ---------------------------------------------------------------------------------------------------- |
+| Command                            | Description                                                                                          |
+| ---------------------------------- | ---------------------------------------------------------------------------------------------------- |
 | Mark Sharp: Switch Editor Mode     | Switches between Mark Sharp and the default VS Code editor, maintaining cursor position.             |
 | Mark Sharp: Insert Mermaid Diagram | Inserts a Mermaid diagram at the current cursor position. A template can be optionally chosen.       |
 | Mark Sharp: Insert Table           | Inserts a table; dimensions can be specified                                                         |
@@ -138,7 +161,7 @@ Mark Sharp contributes the following VS Code commands. Many of the editing comma
 
 ### Setting Mark Sharp as the default Markdown editor
 
-In the [Explorer](https://code.visualstudio.com/docs/getstarted/userinterface#_explorer) view, **right click** on a Markdown file ( with a `.md` or `.markdown` file extension) > `Open With...` > `Configure Default Editor for '.md'...` >  `Mark Sharp`. 
+In the [Explorer](https://code.visualstudio.com/docs/getstarted/userinterface#_explorer) view, **right click** on a Markdown file ( with a `.md` or `.markdown` file extension) > `Open With...` > `Configure Default Editor for '.md'...` >  `Mark Sharp`.
 
 ### Extension Settings
 
