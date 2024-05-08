@@ -18,7 +18,7 @@ Mark Sharp is based on [Github Flavored Markdown](https://github.github.com/gfm/
 There are several ways to launch the Mark Sharp editor:
 
 1. In the [Explorer](https://code.visualstudio.com/docs/getstarted/userinterface#_explorer) view, **right click** on a Markdown file > `Open With...` > `Mark Sharp`.
-2. When a markdown file is open in VS Code's default editor, run the command `Mark Sharp: Switch Editor Mode` from the [command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette).
+2. When a markdown file is open in VS Code's default editor, run the command `Mark Sharp: Switch Editor Mode` from the [command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette) or by clicking the **M→** icon on the top right in the editor title bar.
 
 > _When you edit a markdown file with Mark Sharp, **your existing document layout may be altered**. It is recommended to back up your documents with a version control system like Git or another method of your choice._
 
