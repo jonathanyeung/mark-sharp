@@ -12,7 +12,7 @@ See [Quick Start](./README.md#Quick_Start).
 
 There are several ways to launch the Mark Sharp editor:
 
-1. In the [Explorer](https://code.visualstudio.com/docs/getstarted/userinterface#_explorer) view, **right click** on a Markdown file ( with a `.md` or `.markdown` file extension) > `Open With...` > `Mark Sharp`. 
+1. In the [Explorer](https://code.visualstudio.com/docs/getstarted/userinterface#_explorer) view, **right click** on a Markdown file ( with a `.md` or `.markdown` file extension) > `Open With...` > `Mark Sharp`.
 2. When a markdown file is open in VS Code's default editor, run the command `Mark Sharp: Switch Editor Mode` from the [command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette).
 
 ### Slash Commands
@@ -36,9 +36,51 @@ This is assigned a default shortcut of `cmd+k y` for Mac or `ctrl+k y` for Windo
 
 > _Note: if a document hasn't yet been edited by Mark Sharp, cursor placement may be inaccurate as the markdown definition may be in a state that Mark Sharp doesn't expect._
 
+## User Interface
+
+### Outline Panel
+
+The outline panel can be found in the [Explorer view](https://code.visualstudio.com/docs/getstarted/userinterface#_explorer-view) when a Mark Sharp document is open. The view displays the headers in the current active Mark Sharp document.
+
+- Click on a header to scroll to its position in the page
+- Hover the mouse over a header to get a quick pop-up preview of the contents at that header
+
+You can re-arrange the position of the outline panel as you like, see [Custom Layout](https://code.visualstudio.com/docs/editor/custom-layout).
+
+_Note: the outline panel is only displayed when a Mark Sharp editor is in focus._
+
+![image.png](https://mark-sharp-public.s3.us-west-2.amazonaws.com/images/outline-view.png)
+
 ### Collapsible Headers
 
 For each header element, there's a collapsible chevron that will appear if you mouse over the area immediately to the left of the header. Click the chevron to toggle the child contents of that header. The fold states will sync up with the VSCode editor if you use the `Mark Sharp: Switch Editor Mode` command.
+
+### Presentation Mode
+
+_Premium Feature_
+
+When presentation mode is enabled, Mark Sharp enters a read-only state and streamlines the appearance of the document. This mode is useful when you're trying to present or just read your documents without editing.
+
+To switch between presentation mode and edit mode, you can either:
+
+1. Click on the M# entry in the [status bar](https://code.visualstudio.com/api/ux-guidelines/status-bar) at the bottom of the VS Code window. When not in presentation mode, the status bar item will display `M#: Edit Mode`.
+2. Run the VS Code Command `Mark Sharp: Toggle Presentation Mode`. You can assign a keyboard shortcut of your choice to this command, which makes switching between presentation mode and edit mode a breeze.
+
+When in presentation mode, the following behaviors change:
+
+- The document is no longer editable.
+- The light-gray frontmatter text is no longer visible. The title and created header will still be displayed if present in the frontmatter fields.
+- Clicking on markdown elements will no longer trigger their unformatted state - for example, clicking on **bold** text won't show its '*' tags, clicking on a header won't show '#' tags.
+    - Similarly, clicking on an image won't show its markdown definition below the image
+    - Clicking on a Katex element will not expand to its markdown definition.
+- Clicking on link, wikilinks, and footnote references will now directly navigate you to the destination in a single-click.
+- Mermaid diagrams will display in 'diagram-only' mode.
+- Hovering on the edges of a table will not display the '+' signs to add columns and rows.
+- The draggable 6-dot icon on the left side no longer shows up.
+
+You can use the status bar as a visual indicator of the mode that you're in. When in presentation mode, the status bar item will be in yellow as a reminder that the document cannot be edited.
+
+![image.png](https://mark-sharp-public.s3.us-west-2.amazonaws.com/images/presentation-mode.png)
 
 ### Draggable Blocks
 
@@ -89,7 +131,7 @@ To create a link, type the display text in [brackets] followed by the address in
 
 _Note: web url's must be prefixed with either `https://` or `http://`._
 
-Local files can also be linked by specifying their path relative to the current file. 
+Local files can also be linked by specifying their path relative to the current file.
 
 - `[my note](./folder/my-note.md)`
 - `[my note](my-note-in-same-folder.md)`
@@ -116,7 +158,7 @@ _Premium Feature_
 
 There are several ways to add images to your document:
 
-1. You can paste an image from your clipboard. 
+1. You can paste an image from your clipboard.
 2. You can also drag and drop an image directly into your document. Note: you **must** hold down `shift` **before** starting the drag and until after the drop.
 3. Using the slash command /image or `Mark Sharp: Insert Image`, you can pick an image from a file picker.
 
@@ -126,7 +168,7 @@ When an image is put into the editor, you'll be prompted for a path. You can als
 
 _Premium Feature: Tables will render with all versions, but table editing is only available in premium. To edit tables with basic, switch to the VS Code editor._
 
-You can generate a table by typing |header1|header2| + `space`. You can also generate a table by using a slash command and entering the desired dimensions, for example `/2x3`. A VS Code command also exists, `Mark Sharp: Insert Table`. 
+You can generate a table by typing |header1|header2| + `space`. You can also generate a table by using a slash command and entering the desired dimensions, for example `/2x3`. A VS Code command also exists, `Mark Sharp: Insert Table`.
 
 - Mousing over the bottom or right edges of the table will bring up a '+' sign to add additional rows or columns
 - Right clicking on a cell brings up a context menu with options for manipulating the table
