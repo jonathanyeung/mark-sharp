@@ -1,5 +1,14 @@
 # Change Log
 
+## 1.3.1
+
+- Fixes a regression from `1.3.0` where typing text in a new paragraph created from clicking at the bottom of the document below a table or code block would lead to document skew on export.
+- Fixes some code highlighting issues for certain languages, including HTML and XML.
+- Fixes an issue where code blocks would still be editable in presentation mode.
+- Fixes an issue where if the opening fence of a code block contained spaces in the language definition, the code block would not get parsed.
+- Fixes an issue where a header with only a single formatted element child would stay expanded with '#' tags even after losing focus.
+- Renames the display name from 'Mark Sharp' to 'Mark Sharp - Markdown Editor'.
+
 ## 1.3.0
 
 **New Premium Feature: Presentation Mode**
