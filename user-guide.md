@@ -205,6 +205,17 @@ Mark Sharp contributes the following VS Code commands. Many of the editing comma
 
 In the [Explorer](https://code.visualstudio.com/docs/getstarted/userinterface#_explorer) view, **right click** on a Markdown file ( with a `.md` or `.markdown` file extension) > `Open With...` > `Configure Default Editor for '.md'...` >  `Mark Sharp`.
 
+If you want Mark Sharp as your default editor, but you _don't_ want it when viewing diffs of Markdown files, you can make the following adjustments in your user settings (`> Preferences: Open User Settings (JSON)`):
+
+```json
+"workbench.editorAssociations": {
+    "{git}:/**/*.{md}": "default",
+    "*.md": "msharp.customEditor"
+}
+```
+
+Adding the line `"{git}:/**/*.{md}": "default"` will use the default editor when viewing diffs of Markdown files.
+
 ### Extension Settings
 
 Manage Mark Sharp settings with [VS Code User and Workspace Settings](https://code.visualstudio.com/docs/getstarted/settings).
