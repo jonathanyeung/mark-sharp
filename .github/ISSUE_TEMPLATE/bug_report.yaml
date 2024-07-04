@@ -1,0 +1,48 @@
+name: Bug Report
+description: File a bug report.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report an issue! Your feedback helps improve Mark Sharp.
+  # - type: checkboxes
+  #   attributes:
+  #     label: Is there an existing issue for this?
+  #     description: Please search to see if an issue already exists for the bug you encountered. If one exists, please add a thumbs-up/+1 on the existing issue or comment on it.
+  #     options:
+  #       - label: I have searched the existing issues
+  #         required: true
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Describe the bug.
+      description: A clear and concise description of the bug. Include screenshots if it helps.
+    validations:
+      required: true
+  - type: textarea
+    id: repro-steps
+    attributes:
+      label: Repro Steps
+      description: Please try to be as detailed as possible as editor behaviors can be subtle. Include markdown content that led to the issue if possible (but please scrub sensitive info out first).
+      value: |
+        1.
+        2.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: What version of Mark Sharp are you running? i.e. 1.0.0
+    validations:
+      required: false
+  - type: dropdown
+    id: platform
+    attributes:
+      label: What platform are you seeing the problem on?
+      multiple: true
+      options:
+        - Windows
+        - Mac OS
+        - Linux
+        - vscode.dev (web)
