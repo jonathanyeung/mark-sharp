@@ -106,6 +106,44 @@ _Premium Feature_
 
 Mark Sharp supports [Mermaid diagrams](https://mermaid.js.org/). To create a mermaid diagram, either use a slash command "/mermaid" or type ```mermaid at the beginning of a line.
 
+#### Customizing Diagram Color Themes
+
+By default, the mermaid color theme is derived from your current VSCode color theme. If you want to use Mermaid's built in themes instead, set the `markSharp.mermaidTheme` setting to `useMermaidDefaults`. In this mode, If your VS Code theme is light, the default theme is used; if dark, 'dark' is used (see [Mermaid's documentation](https://mermaid.js.org/config/theming.html#available-themes) for more details).
+
+Futhermore, you can adjust the theme on an individual diagram by setting an `init` block before the diagram defintion. For example:
+
+```mermaid
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#BB2528',
+      'primaryTextColor': '#fff',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
+graph TD
+    A[Christmas] -->|Get money| B(Go shopping)
+    B --> C{Let me think}
+    B --> G[/Another/]
+    C ==>|One| D[Laptop]
+    C -->|Two| E[iPhone]
+    C -->|Three| F[fa:fa-car Car]
+    subgraph section
+    C
+    D
+    E
+    F
+    G
+    end
+```
+
+For details, please refer to Mermaid's [documentation](https://mermaid.js.org/config/theming.html#customizing-themes-with-themevariables). **Note**: if there are any syntax errors in the `init` block, Mermaid's parser will fail silently and the color theme will go back to 'default'. Please double check that your syntax conforms to Mermaid's requirements.
+
 ### Katex
 
 - Katex blocks and inline equations are supported with `$$` and `$f(x)$` syntax respectively.
@@ -188,16 +226,17 @@ Mark Sharp will also format a Header block in an H1 title for a frontmatter fiel
 
 Mark Sharp contributes the following VS Code commands. Many of the editing commands are mirrors of options in the slash command menu.
 
-| Command                            | Description                                                                                          |
-| ---------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| Mark Sharp: Switch Editor Mode     | Switches between Mark Sharp and the default VS Code editor, maintaining cursor position.             |
-| Mark Sharp: Insert Mermaid Diagram | Inserts a Mermaid diagram at the current cursor position. A template can be optionally chosen.       |
-| Mark Sharp: Insert Table           | Inserts a table; dimensions can be specified                                                         |
-| Mark Sharp: Insert Image           | Insert an image                                                                                      |
-| Mark Sharp: Insert Footnote        | Inserts a footnote at the current cursor position.                                                   |
-| Mark Sharp: Fold All               | Folds all headers in the Mark Sharp editor. Analogous to the built-in 'Fold All' command.            |
-| Mark Sharp: Unfold All             | Unfolds all headers in the Mark Sharp editor. Analogous to the built-in 'Unfold All' command.        |
-| Mark Sharp: Manage License         | Opens the licensing page where you can purchase a license, activate a license key, or deactivate your license. |
+| Command                              | Description                                                                                          |
+| ------------------------------------ | ---------------------------------------------------------------------------------------------------- |
+| Mark Sharp: Switch Editor Mode       | Switches between Mark Sharp and the default VS Code editor, maintaining cursor position.             |
+| Mark Sharp: Insert Mermaid Diagram   | Inserts a Mermaid diagram at the current cursor position. A template can be optionally chosen.       |
+| Mark Sharp: Insert Table             | Inserts a table; dimensions can be specified                                                         |
+| Mark Sharp: Insert Image             | Insert an image                                                                                      |
+| Mark Sharp: Insert Footnote          | Inserts a footnote at the current cursor position.                                                   |
+| Mark Sharp: Fold All                 | Folds all headers in the Mark Sharp editor. Analogous to the built-in 'Fold All' command.            |
+| Mark Sharp: Unfold All               | Unfolds all headers in the Mark Sharp editor. Analogous to the built-in 'Unfold All' command.        |
+| Mark Sharp: Manage License           | Opens the licensing page where you can purchase a license, activate a license key, or deactivate your license. |
+| Mark Sharp: Toggle Presentation Mode | Toggles between editing mode and presentation mode.                                                  |
 
 ## Settings
 
@@ -218,8 +257,9 @@ Adding the line `"{git}:/**/*.{md}": "default"` will use the default editor when
 
 ### Extension Settings
 
-Manage Mark Sharp settings with [VS Code User and Workspace Settings](https://code.visualstudio.com/docs/getstarted/settings).
+Manage Mark Sharp settings with [VS Code User and Workspace Settings](https://code.visualstudio.com/docs/getstarted/settings) - please refer to this documentation on how to adjust settings in the VS Code UI.
 
-| Setting              | Description                                                                                          | Default |
-| -------------------- | ---------------------------------------------------------------------------------------------------- | ------- |
-| mark-sharp.imagePath | The path to the images folder relative to the workspace root. When set, images added to docs will be copied to this folder; if blank, then you will be prompted for a path each time an image is added. | ""      |
+| Setting                 | Description                                                                                          | Default     |
+| ----------------------- | ---------------------------------------------------------------------------------------------------- | ----------- |
+| mark-sharp.imagePath    | The path to the images folder relative to the workspace root. When set, images added to docs will be copied to this folder; if blank, then you will be prompted for a path each time an image is added. | ""          |
+| mark-sharp.mermaidTheme | Adjust the color theming of Mermaid Diagrams.                                                        | editorTheme |

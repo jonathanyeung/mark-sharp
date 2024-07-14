@@ -1,5 +1,21 @@
 # Change Log
 
+## 1.3.2
+
+- Mermaid Improvements
+    - Improves readability with the color theming of Mermaid diagrams.
+    - Adds a new setting `mark-sharp.mermaidTheme` that allows you to use Mermaid's default themes. See the [user guide](https://github.com/jonathanyeung/mark-sharp/blob/main/user-guide.md#mermaid-diagrams) for more details.
+    - Fixes an issue where the diagram would disappear when making modifications to the diagram definition that wouldn't alter the diagram appearance (i.e., adding a comment).
+    - Upgrades the Mermaid library version to `10.9.1`.
+- **Behavior Change**: the outline view will no longer auto-minimize even a Mark Sharp editor goes out of focus. This change also fixes an issue where the outline view would sometimes be hidden even when a Mark Sharp editor was in focus.
+- Adds a 'Report' button to the notification popup when a webview error is encountered. Clicking on the button will take you to the [bug reporting page](https://github.com/jonathanyeung/mark-sharp/issues/new?assignees=&labels=&projects=&template=bug_report.yaml) of the project Github.
+- Fixes an issue when deleting the first character in a formatting element that would cause the editor to freeze.
+- Fixes an issue when pasting text that was copied from inside a formatting element.
+- Fixes an issue with cursor navigation when pressing Home/End with an Equation element at the start or end of a line, respectively.
+- Fixes an issue when a link surrounded by formatting elements would lose its formatting on import.
+- Fixes an issue where the cursor would jump to the top the document when switching focus back into VS Code and hovering over a code block.
+- Fixes an issue where code block menu details would be visible when the page first loads.
+
 ## 1.3.1
 
 - Fixes a regression from `1.3.0` where typing text in a new paragraph created from clicking at the bottom of the document below a table or code block would lead to document skew on export.
