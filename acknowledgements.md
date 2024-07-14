@@ -44,11 +44,11 @@ Copyright (c) 2018 Michael Pratt
 
 [MIT License](https://github.com/Urthen/case-sensitive-paths-webpack-plugin?tab=MIT-1-ov-file#)
 
-### chroma-js
+### tinycolor2
 
-Copyright (c) 2011-2019, Gregor Aisch
+Copyright (c), Brian Grinstead, http://briangrinstead.com
 
-[License](https://github.com/gka/chroma.js?tab=License-1-ov-file#readme)
+[MIT License](https://github.com/bgrins/TinyColor/blob/master/LICENSE)
 
 ### diff
 
