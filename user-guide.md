@@ -27,6 +27,7 @@ Trigger slash commands by typing '/' while the cursor is at an empty space. Ther
 | /mermaid      | [Premium Feature] Inserts a mermaid diagram, optionally with a pre-configured template           |
 | /image        | [Premium Feature] Insert an image into your document                                             |
 | /footnote     | [Premium Feature] Insert a footnote into your document. The footnote anchor will auto-increment. |
+| /html         | [Premium Feature] Insert an HTML block using one of the preset templates.                        |
 
 ### Editor Switching
 
@@ -75,6 +76,7 @@ When in presentation mode, the following behaviors change:
     - Clicking on a Katex element will not expand to its markdown definition.
 - Clicking on link, wikilinks, and footnote references will now directly navigate you to the destination in a single-click.
 - Mermaid diagrams will display in 'diagram-only' mode.
+- HTML blocks will render according to their HTML definition. Clicking on the block will not reveal the HTML editor.
 - Hovering on the edges of a table will not display the '+' signs to add columns and rows.
 - The draggable 6-dot icon on the left side no longer shows up.
 
@@ -212,6 +214,15 @@ You can generate a table by typing |header1|header2| + `space`. You can also gen
 - Right clicking on a cell brings up a context menu with options for manipulating the table
 - You can click on the top of a column or row to select the entire column or row
 
+### HTML Blocks
+
+HTML blocks (as defined by the Github Flavored Markdown Spec [Section 4.6](https://github.github.com/gfm/#html-blocks)) will be parsed during document import and exported as a contiguous block.
+
+- _Premium Feature:_ Create HTML blocks quickly with a new slash command entry, `/HTML`. Templates have been added to quickly generate a generic block, a centered `<div/>`, and a resized `<img/>`.
+- Double click on an HTML block to see and edit the HTML definition.
+- If the HTML definition renders into an invisible element (such as an empty div), the HTML definition will be shown as a placeholder. This is to ensure that the HTML block can still be clicked for further editing. In presentation mode, such HTML definitions will not render any content.
+- If the HTML definition is changed such that it no longer forms a valid HTML block, then the block will be reverted to regular text once the cursor focus moves out of the block.
+
 ### Footnotes
 
 You can generate footnotes with a slash command `/footnote` or with the VS Code command `Mark Sharp: Insert Footnote`. Footnotes generated this way will automatically increment, and the reference text will be placed at the bottom of the document.  Furthermore, if a URL is detected on the clipboard, then it'll be used as the footnote text. (This behavior may later prove to be too weird and be removed). ou can also generate a footnote by typing out a matching anchor/reference pair with `[^1]` and on a separate line typing `[^1]: foo`.
@@ -229,14 +240,15 @@ Mark Sharp contributes the following VS Code commands. Many of the editing comma
 | Command                              | Description                                                                                          |
 | ------------------------------------ | ---------------------------------------------------------------------------------------------------- |
 | Mark Sharp: Switch Editor Mode       | Switches between Mark Sharp and the default VS Code editor, maintaining cursor position.             |
-| Mark Sharp: Insert Mermaid Diagram   | Inserts a Mermaid diagram at the current cursor position. A template can be optionally chosen.       |
-| Mark Sharp: Insert Table             | Inserts a table; dimensions can be specified                                                         |
-| Mark Sharp: Insert Image             | Insert an image                                                                                      |
-| Mark Sharp: Insert Footnote          | Inserts a footnote at the current cursor position.                                                   |
+| Mark Sharp: Insert Mermaid Diagram   | [Premium Feature] Inserts a Mermaid diagram at the current cursor position. A template can be optionally chosen. |
+| Mark Sharp: Insert Table             | [Premium Feature] Inserts a table; dimensions can be specified                                       |
+| Mark Sharp: Insert Image             | [Premium Feature] Insert an image                                                                    |
+| Mark Sharp: Insert HTML Block        | [Premium Feature] Inserts an HTML block with one of the preset templates                             |
+| Mark Sharp: Insert Footnote          | [Premium Feature] Inserts a footnote at the current cursor position.                                 |
 | Mark Sharp: Fold All                 | Folds all headers in the Mark Sharp editor. Analogous to the built-in 'Fold All' command.            |
 | Mark Sharp: Unfold All               | Unfolds all headers in the Mark Sharp editor. Analogous to the built-in 'Unfold All' command.        |
 | Mark Sharp: Manage License           | Opens the licensing page where you can purchase a license, activate a license key, or deactivate your license. |
-| Mark Sharp: Toggle Presentation Mode | Toggles between editing mode and presentation mode.                                                  |
+| Mark Sharp: Toggle Presentation Mode | [Premium Feature] Toggles between editing mode and presentation mode.                                |
 
 ## Settings
 

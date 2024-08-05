@@ -1,5 +1,26 @@
 # Change Log
 
+## 1.4.0
+
+### HTML Blocks
+
+HTML blocks are now supported (see the Github Flavored Markdown Spec [Section 4.6](https://github.github.com/gfm/#html-blocks)).
+
+- HTML blocks will now be parsed during document import and exported as a contiguous block.
+- Double click on an HTML block to see and edit the HTML definition.
+- _Premium Feature:_ Create HTML blocks quickly with a new slash command entry, `/HTML`. Templates have been added to quickly generate a generic block, a centered `<div/>`, and a resized `<img/>`.
+
+**Limitations**:
+
+- Inline HTML elements are not yet fully supported.
+- Interleaving Markdown syntax with HTML code is not yet supported (for example, with a `<details>` block) - this is technically not an HTML block as per the GFW spec.
+
+### Other Fixes
+
+- Images in tables will now render properly.
+- Fixes code block parsing issues with documents using CRLF line endings (this primarily affects Windows users).
+- Fixes `<br>` imports in table cells.
+
 ## 1.3.2
 
 - Mermaid Improvements
