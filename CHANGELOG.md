@@ -1,5 +1,33 @@
 # Change Log
 
+## 1.5.0
+
+**Breaking Change**: The setting `mark-sharp.mermaidTheme` has been renamed to `mark-sharp.display.mermaidTheme` - if you had previously changed this setting, then you'll need to set it again (run `> Preferences: Open User Settings`, search for "Mark Sharp").
+
+### Styling Updates
+
+- A default dark theme is now available to all users. To get editor colors matching those of your favorite VS Code theme, please see [Mark Sharp Premium](https://github.com/jonathanyeung/mark-sharp/blob/main/licensing-and-activation.md).
+- **Premium Feature:** Premium users can now switch the theme of their Mark Sharp editor windows among the default light, default dark, and VS Code themes with the `Mark Sharp: Editor Color Theme` command. This command will update the setting `mark-sharp.display.editorTheme`.
+- Improves the page layout for docs with wide tables - text within cells will now be wrapped to better fit the screen dimensions. For tables that have a lot of columns, a horizontal scroll bar will appear for the table element. Furthermore, other elements in the document will now wrap properly instead of running the width of the table.
+- Fixes a white screen flicker issue that would occur when opening a document in dark mode.
+- Cleans up styling in various areas.
+
+### Critical Windows Fix
+
+- Fixes critical text skew issues affecting Windows users (particularly, documents with CRLF line endings) that would sometimes cause characters to move around or line breaks to be inserted in incorrect places.
+
+### Other fixes
+
+- Fixes an initialization error when using Mark Sharp on the web (vscode.dev).
+- Improves editing performance for documents with large tables.
+- Fixes an issue where adding new line items to an existing list would sometimes add erroneous line breaks.
+- Fixes an error when importing a link within a formatted text block.
+
+## 1.4.1
+
+- Fixes an issue that prevented copying/pasting of HTML blocks
+- Fixes an issue where deleting a formatted node sometimes led to a webview error (Lexical Error Code 113).
+
 ## 1.4.0
 
 ### HTML Blocks
