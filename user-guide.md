@@ -271,7 +271,8 @@ Adding the line `"{git}:/**/*.{md}": "default"` will use the default editor when
 
 Manage Mark Sharp settings with [VS Code User and Workspace Settings](https://code.visualstudio.com/docs/getstarted/settings) - please refer to this documentation on how to adjust settings in the VS Code UI.
 
-| Setting                 | Description                                                                                          | Default     |
-| ----------------------- | ---------------------------------------------------------------------------------------------------- | ----------- |
-| mark-sharp.imagePath    | The path to the images folder relative to the workspace root. When set, images added to docs will be copied to this folder; if blank, then you will be prompted for a path each time an image is added. | ""          |
-| mark-sharp.mermaidTheme | Adjust the color theming of Mermaid Diagrams.                                                        | editorTheme |
+| Setting                         | Description                                                                                          | Default     |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------- | ----------- |
+| mark-sharp.imagePath            | The path to the images folder relative to the workspace root. When set, images added to docs will be copied to this folder; if blank, then you will be prompted for a path each time an image is added. | ""          |
+| mark-sharp.display.editorTheme  | Adjust the color theme of the Mark Sharp editor. This setting only affects the premium version of Mark Sharp - the basic version always uses default light/dark themes depending on the current theme type. | vscode      |
+| mark-sharp.display.mermaidTheme | Adjust the color theming of Mermaid Diagrams.                                                        | editorTheme |
