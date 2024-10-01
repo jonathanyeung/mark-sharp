@@ -166,7 +166,7 @@ For details, please refer to Mermaid's [documentation](https://mermaid.js.org/co
 
 To create a link, type the display text in [brackets] followed by the address in (parentheses) as per Markdown link syntax. Examples:
 
-- Markdown link syntax: [google](https://www.google.com)
+- Markdown link syntax: `[google](https://www.google.com)`
 - Raw url: `www.google.com`
 
 _Note: web url's must be prefixed with either `https://` or `http://`._
@@ -249,6 +249,8 @@ Mark Sharp contributes the following VS Code commands. Many of the editing comma
 | Mark Sharp: Unfold All               | Unfolds all headers in the Mark Sharp editor. Analogous to the built-in 'Unfold All' command.        |
 | Mark Sharp: Manage License           | Opens the licensing page where you can purchase a license, activate a license key, or deactivate your license. |
 | Mark Sharp: Toggle Presentation Mode | [Premium Feature] Toggles between editing mode and presentation mode.                                |
+| Mark Sharp: Increase Font Size       | Scales up the font size in the editor. This command will alter the value in the setting `mark-sharp.display.fontSize` |
+| Mark Sharp: Decrease Font Size       | Scales down the font size.                                                                           |
 
 ## Settings
 
@@ -271,8 +273,10 @@ Adding the line `"{git}:/**/*.{md}": "default"` will use the default editor when
 
 Manage Mark Sharp settings with [VS Code User and Workspace Settings](https://code.visualstudio.com/docs/getstarted/settings) - please refer to this documentation on how to adjust settings in the VS Code UI.
 
-| Setting                         | Description                                                                                          | Default     |
-| ------------------------------- | ---------------------------------------------------------------------------------------------------- | ----------- |
-| mark-sharp.imagePath            | The path to the images folder relative to the workspace root. When set, images added to docs will be copied to this folder; if blank, then you will be prompted for a path each time an image is added. | ""          |
-| mark-sharp.display.editorTheme  | Adjust the color theme of the Mark Sharp editor. This setting only affects the premium version of Mark Sharp - the basic version always uses default light/dark themes depending on the current theme type. | vscode      |
-| mark-sharp.display.mermaidTheme | Adjust the color theming of Mermaid Diagrams.                                                        | editorTheme |
+| Setting                         | Description                                                                                          | Default                                   |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| mark-sharp.imagePath            | The path to the images folder relative to the workspace root. When set, images added to docs will be copied to this folder; if blank, then you will be prompted for a path each time an image is added. | ""                                        |
+| mark-sharp.display.editorTheme  | [*Premium Feature*] Adjust the color theme of the Mark Sharp editor. This setting only affects the premium version of Mark Sharp - the basic version always uses default light/dark themes depending on the current theme type. | vscode                                    |
+| mark-sharp.display.mermaidTheme | [*Premium Feature*] Adjust the color theming of Mermaid Diagrams.                                    | editorTheme                               |
+| mark-sharp.display.fontSize     | Adjust the font size of the editor so that text can be scaled independently from the VS Code zoom level. The valid range is 6 - 100. | 14                                        |
+| mark-sharp.display.fontFamily   | [*Premium Feature*] Adjust the font family used in the Mark Sharp editor. Use a comma-separated list to specify multiple fonts (just like the [font-family CSS property](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#examples)). Example: `"Roboto", sans-serif` | Defaults to the font families of VS Code. |
