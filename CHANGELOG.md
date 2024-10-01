@@ -1,5 +1,14 @@
 # Change Log
 
+## 1.5.1
+
+- Adds a setting for adjusting the font size, `mark-sharp.display.fontSize`. This setting can also be adjusted through two convenience commands when an M# document is open, `mark-sharp.increase-font-size` and `mark-sharp.decrease-font-size` so that keyboard shorcuts can be added to quickly scale the text.
+- **Premium feature** - premium users can now customize the fonts in the editor with the setting `mark-sharp.display.fontFamily`.
+- Fixes an issue where using relative image paths would cause the image to not render
+- Fixes an issue where adding multiple images from the clipboard would overwrite existing files - subsequent files will now incrementing suffixes in the file name.
+- Fixes an issue for image paths that had parentheses in the file name.
+- Fixes an issue when pasting text inside the image definition text box.
+
 ## 1.5.0
 
 **Breaking Change**: The setting `mark-sharp.mermaidTheme` has been renamed to `mark-sharp.display.mermaidTheme` - if you had previously changed this setting, then you'll need to set it again (run `> Preferences: Open User Settings`, search for "Mark Sharp").
