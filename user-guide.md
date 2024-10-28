@@ -90,6 +90,13 @@ _Premium Feature_
 
 When you mouse over any element in the document, 6 dots will appear in the left column. You can drag elements to reposition them.
 
+### Right to Left Text Directionality
+
+Mark Sharp has built-in support for editing Markdown in right-to-left (RTL) mode, which is useful when creating documents in RTL languages such as Arabic, Hebrew, and Persian. When RTL mode is enabled, the text direction will flow from right to left, and the text alignment will be right-aligned. RTL mode can be enabled in several ways:
+
+1. When Mark Sharp is open, run the command `Mark Sharp: Change Text Directionality` to toggle between RTL and LTR modes.
+2. In the status bar on the bottom right, click on 'LTR' (or 'RTL') to toggle between the two modes.
+
 ## Markdown Features
 
 Markdown elements can be created using familiar Markdown syntax. For example, you can surround a word with `_` to italicize it, or type `#` at the beginning of a line to create an H1 Header.
@@ -237,20 +244,21 @@ Mark Sharp will also format a Header block in an H1 title for a frontmatter fiel
 
 Mark Sharp contributes the following VS Code commands. Many of the editing commands are mirrors of options in the slash command menu.
 
-| Command                              | Description                                                                                          |
-| ------------------------------------ | ---------------------------------------------------------------------------------------------------- |
-| Mark Sharp: Switch Editor Mode       | Switches between Mark Sharp and the default VS Code editor, maintaining cursor position.             |
-| Mark Sharp: Insert Mermaid Diagram   | [Premium Feature] Inserts a Mermaid diagram at the current cursor position. A template can be optionally chosen. |
-| Mark Sharp: Insert Table             | [Premium Feature] Inserts a table; dimensions can be specified                                       |
-| Mark Sharp: Insert Image             | [Premium Feature] Insert an image                                                                    |
-| Mark Sharp: Insert HTML Block        | [Premium Feature] Inserts an HTML block with one of the preset templates                             |
-| Mark Sharp: Insert Footnote          | [Premium Feature] Inserts a footnote at the current cursor position.                                 |
-| Mark Sharp: Fold All                 | Folds all headers in the Mark Sharp editor. Analogous to the built-in 'Fold All' command.            |
-| Mark Sharp: Unfold All               | Unfolds all headers in the Mark Sharp editor. Analogous to the built-in 'Unfold All' command.        |
-| Mark Sharp: Manage License           | Opens the licensing page where you can purchase a license, activate a license key, or deactivate your license. |
-| Mark Sharp: Toggle Presentation Mode | [Premium Feature] Toggles between editing mode and presentation mode.                                |
-| Mark Sharp: Increase Font Size       | Scales up the font size in the editor. This command will alter the value in the setting `mark-sharp.display.fontSize` |
-| Mark Sharp: Decrease Font Size       | Scales down the font size.                                                                           |
+| Command                                | Description                                                                                          |
+| -------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| Mark Sharp: Switch Editor Mode         | Switches between Mark Sharp and the default VS Code editor, maintaining cursor position.             |
+| Mark Sharp: Insert Mermaid Diagram     | [Premium Feature] Inserts a Mermaid diagram at the current cursor position. A template can be optionally chosen. |
+| Mark Sharp: Insert Table               | [Premium Feature] Inserts a table; dimensions can be specified                                       |
+| Mark Sharp: Insert Image               | [Premium Feature] Insert an image                                                                    |
+| Mark Sharp: Insert HTML Block          | [Premium Feature] Inserts an HTML block with one of the preset templates                             |
+| Mark Sharp: Insert Footnote            | [Premium Feature] Inserts a footnote at the current cursor position.                                 |
+| Mark Sharp: Fold All                   | Folds all headers in the Mark Sharp editor. Analogous to the built-in 'Fold All' command.            |
+| Mark Sharp: Unfold All                 | Unfolds all headers in the Mark Sharp editor. Analogous to the built-in 'Unfold All' command.        |
+| Mark Sharp: Manage License             | Opens the licensing page where you can purchase a license, activate a license key, or deactivate your license. |
+| Mark Sharp: Toggle Presentation Mode   | [Premium Feature] Toggles between editing mode and presentation mode.                                |
+| Mark Sharp: Increase Font Size         | Scales up the font size in the editor. This command will alter the value in the setting `mark-sharp.display.fontSize` |
+| Mark Sharp: Decrease Font Size         | Scales down the font size.                                                                           |
+| Mark Sharp: Change Text Directionality | Toggles between Right-To-Left text mode and Left-To-Right text mode.                                 |
 
 ## Settings
 
