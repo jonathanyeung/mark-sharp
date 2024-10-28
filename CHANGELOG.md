@@ -1,5 +1,19 @@
 # Change Log
 
+## 1.6.0
+
+### Right to Left Text Mode
+
+This version introduces a right-to-left (RTL) text mode to improve the experience of authoring Markdown documents in RTL languages, such as Arabic, Hebrew, and Persian. When RTL mode is enabled, the text direction will flow from right to left, and the text alignment will be right-aligned. You can toggle RTL mode in several ways:
+
+1. When Mark Sharp is open, run the command `Mark Sharp: Change Text Directionality`.
+2. In the status bar on the bottom right, click on 'LTR' (or 'RTL') to toggle between the two modes.
+
+### Fixes
+
+- Fixes an issue where the prompt to select a destination path for an image being pasted from the clipboard would appear multiple times.
+- Fixes an issue that prevented images with spaces in the path name while inside a table or HTML block from properly resolving.
+
 ## 1.5.1
 
 - Adds a setting for adjusting the font size, `mark-sharp.display.fontSize`. This setting can also be adjusted through two convenience commands when an M# document is open, `mark-sharp.increase-font-size` and `mark-sharp.decrease-font-size` so that keyboard shorcuts can be added to quickly scale the text.
