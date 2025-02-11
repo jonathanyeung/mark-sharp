@@ -1,5 +1,28 @@
 # Change Log
 
+## 1.7.0
+
+- Revamp of Images:
+    - Clicking on an image or focusing on it with the cursor will now show the markdown definition text inline, rather than in a separate text box. This makes the image editing experience closer to that of editing a markdown document.
+    - Multiple images on the same line will now properly render side-by-side, provided the window has enough horizontal space.
+    - **Breaking Change**: When images on the clipboard are pasted sequentially, the image files will be saved to the workspace with a `image-1.jpg`, `image-2.jpg` format instead of `image (1).jpg`. This formatting is easier to work with in Markdown links.
+- Fixes some parsing issues of wikilinks when there are multiple aliased wikilinks on the same line.
+- Fixes box shadow styling issues in tables when the table cell editor is focused.
+- Fixes an export issue with checked list items that have child elements that would cause child elements such as code blocks to get parsed incorrectly when re-opening the Mark Sharp editor.
+
+## 1.6.2
+
+- The `Mark Sharp: Split View` context menu on Explorer items now only shows up when right clicking on Markdown files and has been moved down the menu order.
+- Fixes an issue when parsing wikilinks that have multiple '|' characters in them.
+- Fixes an issue when parsing multiple images on a single line.
+
+## 1.6.1
+
+- Upgrades the Mermaid version from `10.9.1` to `11.4.0`. For details, please see the [mermaid-js changelog](https://github.com/mermaid-js/mermaid/releases).
+- Improves reliability of cursor position placement when switching editor modes.
+- Fixes parsing issues with list indentation level when the lists are indented by tabs.
+- Expands the supported language set for syntax highlight in code blocks.
+
 ## 1.6.0
 
 ### Right to Left Text Mode
