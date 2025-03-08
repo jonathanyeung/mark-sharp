@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.7.1
+
+- Fixes line numbers in code blocks for wrapped lines.
+- Mitigates a parsing issue with multiple image elements on the same line that led to a 'Unhandled scenario: image definition spans multiple nodes' error message and prevented the document from loading.
+- Fixes some precedence issues with inline code spans. Creating a code span around existing elements such as links or bolded text will revert the inner formatting to plain text.
+
 ## 1.7.0
 
 - Revamp of Images:
