@@ -1,5 +1,17 @@
 # Change Log
 
+## 1.7.2
+
+[**Github-style Alerts**](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts) are now supported.
+
+- Adding `[!NOTE]`, `[!TIP]`, `[!IMPORTANT]`, `[!WARNING]`, or `[!CAUTION]` at the start of a quote block will stylize the block with a particular color and icon that can further emphasize the contents for the reader.
+- Customize the display text of the alert by adding suffix text, for example `> [!TIP] Check this out!`.
+- **Premium Feature**: quickly add an alert to your document with added slash commands. These can be found in the subcategories under 'Quote Block'.
+
+General Fixes:
+
+- Improves parsing of code blocks. Code blocks with various leading spaces are now parsed in accordance with the Github Flavored Markdown spec. Code blocks with tilde (`~`) fences and also now parsed correctly.
+
 ## 1.7.1
 
 - Fixes line numbers in code blocks for wrapped lines.

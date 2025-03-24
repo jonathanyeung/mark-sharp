@@ -153,6 +153,12 @@ graph TD
 
 For details, please refer to Mermaid's [documentation](https://mermaid.js.org/config/theming.html#customizing-themes-with-themevariables). **Note**: if there are any syntax errors in the `init` block, Mermaid's parser will fail silently and the color theme will go back to 'default'. Please double check that your syntax conforms to Mermaid's requirements.
 
+### Quote Blocks
+
+- Create a quote block by typing "> " at the beginning of an empty line.
+- Create a [Github-style Alert](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts) by typing `[!NOTE]`, `[!TIP]`, `[!IMPORTANT]`, `[!WARNING]`, or `[!CAUTION]` at the beginning of the first line of quote block. This will change the color block and add an icon corresponding to the alert type.
+- Customize the display text of the alert by adding suffix text, for example `> [!TIP] Check this out!`.
+
 ### Katex
 
 - Katex blocks and inline equations are supported with `$$` and `$f(x)$` syntax respectively.
