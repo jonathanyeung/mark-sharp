@@ -1,5 +1,26 @@
 # Change Log
 
+## 1.8.0
+
+### Formatting Settings
+
+This version introduces formatting settings, which allow for more control over the markdown style that is exported back to the underlying file.
+
+- For ordered lists, change the `orderedListDelimiter` setting to alter between `1.` and `1)`. Change the `orderedListIncrementStyle` to have the list numbers be incrementing or always be `1`.
+- For unordered list, change `bulletListMarker` to switch the marker between `-`, `*`, and `+`.
+- **Behavior Change** - the default option for the above settings is `asTyped` - in this mode, the style will match the existing style as imported from the original document; when typing in the Mark Sharp editor, the export style will match the user's input.
+- For tables, `tableAlignment` can be set to `alignColumns` to have columns delimiters aligned or `condensed` to have the line widths be as short as possible.
+
+These settings can be adjusted through [VS Code's settings](https://code.visualstudio.com/docs/configure/settings#_settings-editor). Search for settings beginning with `Mark-Sharp>Formatting`. For more details, see the [user guide](https://github.com/jonathanyeung/mark-sharp/blob/main/user-guide.md#extension-settings). More export settings will be added in subsequent versions.
+
+### Other improvements and fixes
+
+- **Behavior Change** - if a url is copied to clipboard and then pasted over a portion of selected text, a markdown link will be generated with the selected text as the link text.
+- **Critical Fix** - fixes an issue that caused document state skew when certain elements including horizontal rules, HTML blocks, tables, and images were deleted when the entire block element was selected.
+- Fixes an issue where formatted elements such as links or bolded text would disappear when converted to a header.
+- Fixes a crash that would occur when manipulating footnote anchors.
+- Improves parsing robustness when creating check list items.
+
 ## 1.7.2
 
 [**Github-style Alerts**](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts) are now supported.

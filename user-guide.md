@@ -182,6 +182,8 @@ To create a link, type the display text in [brackets] followed by the address in
 - Markdown link syntax: `[google](https://www.google.com)`
 - Raw url: `www.google.com`
 
+A link can also created by having a URL on the clipboard and then pasting over a text selection - this will create a Markdown link with the selected text as the link text.
+
 _Note: web url's must be prefixed with either `https://` or `http://`._
 
 Local files can also be linked by specifying their path relative to the current file.
@@ -287,10 +289,14 @@ Adding the line `"{git}:/**/*.{md}": "default"` will use the default editor when
 
 Manage Mark Sharp settings with [VS Code User and Workspace Settings](https://code.visualstudio.com/docs/getstarted/settings) - please refer to this documentation on how to adjust settings in the VS Code UI.
 
-| Setting                         | Description                                                                                          | Default                                   |
-| ------------------------------- | ---------------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| mark-sharp.imagePath            | The path to the images folder relative to the workspace root. When set, images added to docs will be copied to this folder; if blank, then you will be prompted for a path each time an image is added. | ""                                        |
-| mark-sharp.display.editorTheme  | [*Premium Feature*] Adjust the color theme of the Mark Sharp editor. This setting only affects the premium version of Mark Sharp - the basic version always uses default light/dark themes depending on the current theme type. | vscode                                    |
-| mark-sharp.display.mermaidTheme | [*Premium Feature*] Adjust the color theming of Mermaid Diagrams.                                    | editorTheme                               |
-| mark-sharp.display.fontSize     | Adjust the font size of the editor so that text can be scaled independently from the VS Code zoom level. The valid range is 6 - 100. | 14                                        |
-| mark-sharp.display.fontFamily   | [*Premium Feature*] Adjust the font family used in the Mark Sharp editor. Use a comma-separated list to specify multiple fonts (just like the [font-family CSS property](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#examples)). Example: `"Roboto", sans-serif` | Defaults to the font families of VS Code. |
+| Setting                                         | Description                                                                                          | Default                                                                                              |
+| ----------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| mark-sharp.imagePath                            | The path to the images folder relative to the workspace root. When set, images added to docs will be copied to this folder; if blank, then you will be prompted for a path each time an image is added. | ""                                                                                                   |
+| mark-sharp.display.editorTheme                  | [*Premium Feature*] Adjust the color theme of the Mark Sharp editor. This setting only affects the premium version of Mark Sharp - the basic version always uses default light/dark themes depending on the current theme type. | vscode                                                                                               |
+| mark-sharp.display.mermaidTheme                 | [*Premium Feature*] Adjust the color theming of Mermaid Diagrams.                                    | editorTheme                                                                                          |
+| mark-sharp.display.fontSize                     | Adjust the font size of the editor so that text can be scaled independently from the VS Code zoom level. The valid range is 6 - 100. | 14                                                                                                   |
+| mark-sharp.display.fontFamily                   | [*Premium Feature*] Adjust the font family used in the Mark Sharp editor. Use a comma-separated list to specify multiple fonts (just like the [font-family CSS property](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#examples)). Example: `"Roboto", sans-serif` | Defaults to the font families of VS Code.                                                            |
+| mark-sharp.formatting.bulletListMarker          | The type of marker to use for bullet lists when saving to the markdown file. (`-`, `*`, `+`)         | The marker parsed from the markdown file is used when importing, and the typed marker is used for new lists created when editing. |
+| mark-sharp.formatting.orderedListDelimiter      | The delimiter to use for ordered lists when saving the document back to the markdown file. (Either `1.` or `1)`) | The delimiter parsed from the markdown file is used when importing, and the typed delimiter is used for new lists when editing." |
+| mark-sharp.formatting.orderedListIncrementStyle | Increment numbers in ordered lists or always use 1's when saving the document back to the markdown file. | The style parsed from the markdown file is used when importing, and incrementing numbers are always used for new lists when editing. This setting does not affect the rendered markdown; increasing numbers will always be displayed. |
+| mark-sharp.formatting.tableAlignment            | Set how tables are arranged when saving the document back to the markdown file. Either align columns or condense line width. | Align columns                                                                                        |
