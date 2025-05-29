@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.8.1
+
+- Fixes the 'Current editor state is null after VSCode Ack.' crash that would sporadically occur when editing longer documents.
+- Upgrades Mermaid version from `11.4.0` to `11.6.0`. For details, please see the [mermaid-js changelog](https://github.com/mermaid-js/mermaid/releases).
+- [_Internal_] Upgrades version of core editor engine.
+
 ## 1.8.0
 
 ### Formatting Settings
