@@ -119,36 +119,34 @@ Mark Sharp supports [Mermaid diagrams](https://mermaid.js.org/). To create a mer
 
 By default, the mermaid color theme is derived from your current VSCode color theme. If you want to use Mermaid's built in themes instead, set the `markSharp.mermaidTheme` setting to `useMermaidDefaults`. In this mode, If your VS Code theme is light, the default theme is used; if dark, 'dark' is used (see [Mermaid's documentation](https://mermaid.js.org/config/theming.html#available-themes) for more details).
 
-Futhermore, you can adjust the theme on an individual diagram by setting an `init` block before the diagram defintion. For example:
+Futhermore, you can adjust the theme on an individual diagram by including a frontmatter block before the diagram defintion. For example:
 
 ```mermaid
-%%{
-  init: {
-    'theme': 'base',
-    'themeVariables': {
-      'primaryColor': '#BB2528',
-      'primaryTextColor': '#fff',
-      'primaryBorderColor': '#7C0000',
-      'lineColor': '#F8B229',
-      'secondaryColor': '#006100',
-      'tertiaryColor': '#fff'
-    }
-  }
-}%%
+---
+config:
+  theme: 'base'
+  themeVariables:
+    primaryColor: '#BB2528'
+    primaryTextColor: '#fff'
+    primaryBorderColor: '#7C0000'
+    lineColor: '#F8B229'
+    secondaryColor: '#006100'
+    tertiaryColor: '#fff'
+---
 graph TD
-    A[Christmas] -->|Get money| B(Go shopping)
-    B --> C{Let me think}
-    B --> G[/Another/]
-    C ==>|One| D[Laptop]
-    C -->|Two| E[iPhone]
-    C -->|Three| F[fa:fa-car Car]
-    subgraph section
+  A[Christmas] -->|Get money| B(Go shopping)
+  B --> C{Let me think}
+  B --> G[/Another/]
+  C ==>|One| D[Laptop]
+  C -->|Two| E[iPhone]
+  C -->|Three| F[fa:fa-car Car]
+  subgraph section
     C
     D
     E
     F
     G
-    end
+  end
 ```
 
 For details, please refer to Mermaid's [documentation](https://mermaid.js.org/config/theming.html#customizing-themes-with-themevariables). **Note**: if there are any syntax errors in the `init` block, Mermaid's parser will fail silently and the color theme will go back to 'default'. Please double check that your syntax conforms to Mermaid's requirements.

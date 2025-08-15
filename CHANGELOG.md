@@ -1,5 +1,17 @@
 # Change Log
 
+## 1.8.2
+
+- Fixes an issue where Mermaid diagrams with frontmatter would not render; updates the mermaid version from `11.6.0` to `11.9.0`. For details, please see the [mermaid-js changelog](https://github.com/mermaid-js/mermaid/releases).
+- Mark Sharp will no longer override your `editor.defaultFormatter` and `editor.formatOnSave` VSCode settings; these can now be set to values of your choosing without affecting Mark Sharp's functionality.
+- Fixes an issue where copying partial text from a header and pasting it would erroneously create a new header
+- This release makes various improvements to Markdown parsing during import that improve stability and alignment with the Github Flavored Markdown spec:
+    - Fixes an issue where footnotes with formatted text would prevent certain documents from loading.
+    - Improved handling of links within formatting elements
+    - Improved handling of inline code spans taking precedence over other formatting elements
+    - Improved parsing of nested formatting elements
+    - Support for using multiple backticks` for inline code spans.
+
 ## 1.8.1
 
 - Fixes the 'Current editor state is null after VSCode Ack.' crash that would sporadically occur when editing longer documents.
