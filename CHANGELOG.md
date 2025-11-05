@@ -1,5 +1,34 @@
 # Change Log
 
+## 1.9.0
+
+**Behavior Change** - pressing 'Up Arrow' at the top of a document will no longer create new lines at the top of the document. To add new lines, place the cursor at the beginning of the first line, and hit enter. This can also be done within block elements like code blocks, html blocks, and tables - with the cursor on the top line of the block element, hit the up arrow and a cursor will appear ahead of the block. Hitting enter in this state will add a new line at the top of the document.
+
+### Code Block Improvements
+
+- Fixes an issue where line numbers are incorrect when a code highlight segment spans multiple lines.
+- Fixes an issue where the document viewport would sometimes jump when the mouse entered a code block.
+
+### Equation Improvements
+
+- Revamps the functionality of inline and block equations; arrow key navigation into and out of equation components is more natural.
+- Updates the styling to match other block and inline elements.
+- Adds a slash command to create equation blocks.
+
+### Other Fixes and Changes
+
+- Fixes an issue for basic mode where editing is blocked if the document contains a table.
+- Fixes an issue with importing emphasis elements (**) when the leading word is a single letter.
+- Fixes a crash in "btoa" that would sometimes affect documents with equations or images.
+- Fixes an import crash when brackets are part of a link label.
+- Improves parsing behaviors for quote blocks, particularly with nested quote blocks and blocks that don't have a leading space after the '>' delimiter.
+- Fixes some positioning offset problems with the chevrons in the sidebar next to headers.
+- Updates Mermaid version from `11.9.0` to `11.11.0`.
+
+## 1.8.3
+
+- Allows activation of Mark Sharp Premium in a Linux code server environment
+
 ## 1.8.2
 
 - Fixes an issue where Mermaid diagrams with frontmatter would not render; updates the mermaid version from `11.6.0` to `11.9.0`. For details, please see the [mermaid-js changelog](https://github.com/mermaid-js/mermaid/releases).
