@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.9.1
+
+- Inline equations will now form when the characters adjacent to the `$` signs are not spaces. This prevents accidental parsing of dollar signs to inline equations, such as in `$1, $2` .
+- Fixes an issue where images with no alt-text specified would not render.
+- Allows code blocks to be specified by more than 3 backticks or tildas and preserves the length when saving the document.
+
 ## 1.9.0
 
 **Behavior Change** - pressing 'Up Arrow' at the top of a document will no longer create new lines at the top of the document. To add new lines, place the cursor at the beginning of the first line, and hit enter. This can also be done within block elements like code blocks, html blocks, and tables - with the cursor on the top line of the block element, hit the up arrow and a cursor will appear ahead of the block. Hitting enter in this state will add a new line at the top of the document.
