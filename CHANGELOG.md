@@ -1,5 +1,41 @@
 # Change Log
 
+## 1.10.0
+
+### Improved Paragraph Parsing
+
+**Behavior Change** - When importing a document, only lines of text separated by one or more blank line will create a new paragraph. This behavior is consistent with line behavior specified by the [Github Flavored Markdown spec](https://github.github.com/gfm/#paragraphs).
+
+Example - the following text will render into a single line:
+
+```
+hello
+world
+```
+
+Separating the text with at one or more blank lines will render two separate paragraphs:
+
+```
+hello
+
+world
+```
+
+### Support for Hard Line Breaks
+
+This release adds support for [hard line breaks](https://github.github.com/gfm/#hard-line-break), which can be specified with either a `\` or two spaces at the end of a line. In the Mark Sharp editor, a line break can be created with `Shift+Enter`. Additionally, a new setting `mark-sharp.formatting.lineBreakStyle` provides control over the type of hard break syntax used during document export.
+
+_Note: Many auto-formatters may strip off trailing spaces, so using a `\` is recommended rather than double spaces._
+
+### Context Menu
+
+A context menu has been added that can be accessed with either a right click or by highlighting a portion of text. The context menu allows for editing options such as changing text formatting and copy, cut, and paste operations.
+
+### Other Fixes
+
+- Fixes an issue where opening a previously unopened document would scroll to the bottom. The viewport now stays at the top of the document.
+- Fixes an issue where pasting into a non-empty line in a code block would cause skew and offsetting issues.
+
 ## 1.9.1
 
 - Inline equations will now form when the characters adjacent to the `$` signs are not spaces. This prevents accidental parsing of dollar signs to inline equations, such as in `$1, $2` .
