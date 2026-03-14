@@ -1,5 +1,20 @@
 # Change Log
 
+## 1.11.0
+
+### Improved Mermaid Experience
+
+- **Behavior Change** Mermaid diagrams now default to 'Diagram' display mode. The display state (Code/Diagram/Split) for each diagram is now saved and restored when re-opening a document. In presentation mode, diagrams remain in 'Diagram' mode and do not affect the saved display state when editing.
+- Adds five new diagram templates available from the slash command menu: XY Chart, Block Diagram, Packet Diagram, Kanban, and Architecture.
+- Adds zoom and pan controls to Mermaid diagrams, making it easier to navigate larger diagrams.
+- Adds a documentation button to the top right corner of the diagram menu bar that links to the relevant Mermaid docs page for the current diagram type.
+- Updates the Mermaid library version from `11.11.0` to `11.12.3`.
+
+### Other Fixes and Features
+
+- **New Setting**: `mark-sharp.display.documentWidth` controls the page width of the editor. Choose `letter` for a fixed A4-sized layout, or `fullPage` (the default) to span the full width of the viewport.
+- Fixes a double-pasting issue that could occur in documents containing both a code block and a table.
+
 ## 1.10.0
 
 ### Improved Paragraph Parsing
