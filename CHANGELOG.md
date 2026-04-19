@@ -1,5 +1,31 @@
 # Change Log
 
+## 1.12.0
+
+### More Options for Saving Images
+
+_Premium Feature_
+
+When using drag-and-drop or copy-paste to add images, the built-in VS Code setting `markdown.copyFiles.destination` is now used to determine the destination of the image. This provides more options on where to save images and makes the behavior consistent with the built-in text editor; see VS Code's [documentation](https://code.visualstudio.com/docs/languages/markdown#_inserting-images-and-links-to-files) for more details. The existing `mark-sharp.imagePath` setting is now deprecated.
+
+### Table Improvements
+
+- New shortcut - press F2 to enter the edit mode of a table cell and place the cursor after existing content.
+- Fixes an issue with Chinese IME input in table cells where the leading keystroke would not be captured by the Pinyin composer.
+
+### Other Fixes and Features
+
+- Pasting a link to a local file will create an auto-link similar to when pasting URL's. Furthermore, pasting over existing text will create a markdown link. This behavior works for both relative and absolute file paths.
+- Improves Undo/Redo behavior when markdown elements such as bold, italics, or links get created; fixes certain issues when using non-English keyboard layouts.
+- Adds support for triple colon `:::mermaid` syntax for creating Mermaid diagrams (used by Azure DevOps).
+- Fixes a parsing issue when opening markdown documents containing single-line block-display Katex elements. (`$$...$$`).
+- Fixes a crash when undoing a code block deletion.
+- Fixes issue where deleting a quote block would sometimes leave residual elements.
+- Fixes arrow key navigation with hard line breaks in paragraphs.
+- Fixes deletion behavior for multi-item lists on backspace/delete.
+- Fixes footnote sorting for documents with 10 or more footnotes.
+- Fixes extra text leaking after image nodes when the alt-text or filename contains underscores.
+
 ## 1.11.0
 
 ### Improved Mermaid Experience

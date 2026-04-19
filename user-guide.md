@@ -215,7 +215,7 @@ There are several ways to add images to your document:
 2. You can also drag and drop an image directly into your document. Note: you **must** hold down `shift` **before** starting the drag and until after the drop.
 3. Using the slash command /image or `Mark Sharp: Insert Image`, you can pick an image from a file picker.
 
-When an image is put into the editor, you'll be prompted for a path. You can also set the setting `mark-sharp.imagePath` to set a default path and avoid the prompt.
+When adding images, the built-in VS Code setting `markdown.copyFiles.destination` is used to determine the destination of the image. This makes the behavior consistent with the built-in text editor and provides various options for the desired path and file name; see VS Code's [documentation](https://code.visualstudio.com/docs/languages/markdown#_inserting-images-and-links-to-files) for more details.
 
 ### Tables
 
@@ -293,7 +293,7 @@ Manage Mark Sharp settings with [VS Code User and Workspace Settings](https://co
 
 | Setting                                         | Description                                                                                          | Default                                                                                              |
 | ----------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| mark-sharp.imagePath                            | The path to the images folder relative to the workspace root. When set, images added to docs will be copied to this folder; if blank, then you will be prompted for a path each time an image is added. | ""                                                                                                   |
+| mark-sharp.imagePath                            | **Deprecated** - use the built-in VS Code setting `markdown.copyFiles.destination` instead. See VS Code's [documentation](https://code.visualstudio.com/docs/languages/markdown#_inserting-images-and-links-to-files) for more details. | ""                                                                                                   |
 | mark-sharp.display.editorTheme                  | [*Premium Feature*] Adjust the color theme of the Mark Sharp editor. This setting only affects the premium version of Mark Sharp - the basic version always uses default light/dark themes depending on the current theme type. | vscode                                                                                               |
 | mark-sharp.display.mermaidTheme                 | [*Premium Feature*] Adjust the color theming of Mermaid Diagrams.                                    | editorTheme                                                                                          |
 | mark-sharp.display.fontSize                     | Adjust the font size of the editor so that text can be scaled independently from the VS Code zoom level. The valid range is 6 - 100. | 14                                                                                                   |
