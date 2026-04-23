@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.12.1
+
+- Fixes a crash and some rendering issues with strings representing file paths inside other formatting elements.
+- Fixes arrow-down key navigation out of certain nodes to correctly move to the next line.
+- When saving an image with a path that already exists, the number-suffixed paths now properly observe the format specified in the `markdown.copyFiles.destination` setting.
+
 ## 1.12.0
 
 ### More Options for Saving Images
