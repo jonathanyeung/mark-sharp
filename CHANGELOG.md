@@ -1,5 +1,12 @@
 # Change Log
 
+## 1.12.2
+
+- Fixes undo behavior in code blocks.
+- Fixes Home/End keyboard shortcuts in code blocks when using the Shift modifier.
+- Fixes list type conversions for empty list items so list formatting behaves more reliably while editing.
+- Fixes arrow key navigation in code blocks with wrapped lines.
+
 ## 1.12.1
 
 - Fixes a crash and some rendering issues with strings representing file paths inside other formatting elements.
