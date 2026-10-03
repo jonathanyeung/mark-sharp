@@ -1,5 +1,20 @@
 # Change Log
 
+## 1.13.0
+
+### Improvements to Agent Editing
+
+Mark Sharp will now receive edits occurring from outside of the editor, such as when an AI agent is generating content.
+
+### Better Copy & Paste
+
+Improves copy and paste behavior, whether to or from Mark Sharp, the native VS Code editor, or external applications like email clients.
+
+### Other Fixes
+
+- Adds more scrollable space at the bottom of longer documents for a better editing experience.
+- Fixes edge cases with arrow key navigation.
+
 ## 1.12.2
 
 - Fixes undo behavior in code blocks.
